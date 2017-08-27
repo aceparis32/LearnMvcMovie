@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!-- saved from url=(0078)https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field -->
+<html class="js hasSidebar hasPageActions hasBreadcrumb  noTouch" lang="en-us" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta property="og:title" content="Adding a New Field">
+	<meta property="og:image" content="https://docs.microsoft.com/_themes/docs.theme/master/en-us/_themes/images/microsoft-header.png">
+
+
+		<meta name="breadcrumb_path" content="/aspnet/breadcrumb/toc.json">
+<meta name="ms.assetid" content="16efbacf-fe7b-4b41-84b0-06a1574b95c2">
+<meta name="author" content="Rick-Anderson">
+<meta name="ms.author" content="riande">
+<meta name="manager" content="wpickett">
+<meta name="uid" content="tutorials/first-mvc-app/new-field">
+<meta name="keywords" content="ASP.NET Core,">
+<meta name="ms.topic" content="get-started-article">
+<meta name="ms.date" content="10/14/2016">
+<meta name="ms.technology" content="aspnet">
+<meta name="ms.prod" content="asp.net-core">
+<meta name="search.ms_sitename" content="Docs">
+<meta name="search.ms_docsetname" content="aspnet-core-conceptual">
+<meta name="version" content="0">
+<meta name="locale" content="en-us">
+<meta name="site_name" content="Docs">
+<meta name="search.ms_product" content="MSDN">
+<meta name="depot_name" content="MSDN.aspnet-core-conceptual">
+<meta name="updated_at" content="2017-07-05 07:07 PM">
+<meta name="gitcommit" content="https://github.com/aspnet/Docs/blob/2225182397e8ef8a16d20929e397e419305afedc/aspnetcore/tutorials/first-mvc-app/new-field.md">
+<meta name="original_content_git_url" content="https://github.com/aspnet/Docs/blob/live/aspnetcore/tutorials/first-mvc-app/new-field.md">
+<meta name="document_id" content="cca95f5e-0fe4-bbd2-fd23-13562e02f888">
+<meta name="pagetype" content="Conceptual">
+<meta name="toc_rel" content="../../toc.json">
+<meta name="pdf_url_template" content="https://docs.microsoft.com/pdfstore/en-us/MSDN.aspnet-core-conceptual/{branchName}{pdfName}">
+<meta name="word_count" content="776">
+
+	<meta name="scope" content="ASP.NET Core">
+<link href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field" rel="canonical">
+	<title>Adding a New Field | Microsoft Docs</title>
+
+	<link rel="stylesheet" href="./Adding a New Field _ Microsoft Docs_files/959b29235e59464fa914.site.css">
+	<link rel="stylesheet" href="./Adding a New Field _ Microsoft Docs_files/959b29235e59464fa914.conceptual.css">
+
+	<script async="" src="./Adding a New Field _ Microsoft Docs_files/analytics.js.download"></script><script>
+	var msDocs = {
+		data:{
+			contentLocale: 'en-us',
+			contentDir: 'ltr',
+			pathToTheme: '/_themes/docs.theme/master/en-us/_themes/',
+			pageTemplate: 'Conceptual',
+			brand : ''
+			,requestedLocale: 'en-us'
+		},
+		functions:{},
+		settings:{
+			extendBreadcrumb: false
+		}
+	};
+	if (!('Promise' in window && 'resolve' in window.Promise && 'reject' in window.Promise && 'all' in window.Promise && 'race' in window.Promise)) {
+		document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/bluebird.min.js"><\/script>');
+	}
+	</script>
+
+	<!--[if lt IE 9]>
+		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.4.min.js"></script>
+		<script src="/_themes/docs.theme/master/en-us/_themes/global/js/polyfills/all.js"></script>
+	<![endif]-->
+	<!--[if gte IE 9]><!-->
+		<script src="./Adding a New Field _ Microsoft Docs_files/jquery-2.2.4.min.js.download"></script>
+	<!--<![endif]-->
+	<script>window.jQuery || document.write('<script src="/_themes/docs.theme/master/en-us/_themes/global/js/jquery/jquery-1.12.4.min.js"><\/script>')</script>
+	<script src="./Adding a New Field _ Microsoft Docs_files/global.min.js.download"></script><style></style><script src="./Adding a New Field _ Microsoft Docs_files/jsll-4.js.download" async="" defer=""></script>
+	<script src="./Adding a New Field _ Microsoft Docs_files/uhf-main.var.min.js.download" async="" defer=""></script>
+	<script src="./Adding a New Field _ Microsoft Docs_files/meversion" async="" defer=""></script>
+<meta name="ms.documentid" content="cca95f5e-0fe4-bbd2-fd23-13562e02f888"><meta name="ms.contentlang" content="en-us"><meta name="ms.publishtime" content="2017-07-05 07:07 PM"><meta name="ms.giturl" content="https://github.com/aspnet/Docs/blob/live/aspnetcore/tutorials/first-mvc-app/new-field.md"><meta name="ms.sitename" content="Docs"><meta name="ms.gitcommit" content="https://github.com/aspnet/Docs/blob/2225182397e8ef8a16d20929e397e419305afedc/aspnetcore/tutorials/first-mvc-app/new-field.md"><meta name="ms.depotname" content="MSDN.aspnet-core-conceptual"><meta name="ms.opspagetype" content="Conceptual"><meta name="ms.locale" content="en-us"><meta name="ms.lang" content="en"><meta name="ms.loc" content="us"><meta name="ms.theme" content="light"><meta name="ms.contentsource" content="OP"><meta name="ms.pvid" content="1DF17E34-980B-43C0-8D21-7FD1D2208C0D"><meta name="ms.perf.timing" content=",,0,29,1202,1207,1996,2017,2041,2330,2331,,,,"><script type="text/javascript" charset="utf-8" async="" src="./Adding a New Field _ Microsoft Docs_files/2.959b29235e59464fa914.2.js.download"></script><link rel="stylesheet" href="./Adding a New Field _ Microsoft Docs_files/81-22b75a" type="text/css" media="all"><script async="" src="./Adding a New Field _ Microsoft Docs_files/t.js.download"></script><style>.lf { display: none!important; }</style><script src="./Adding a New Field _ Microsoft Docs_files/ai.0.js.download"></script><script async="" src="./Adding a New Field _ Microsoft Docs_files/t.js(1).download"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/_chrome/commenting/master/open-commenting.ui.v1.0.2-7-g1b78816.master.min.js" src="./Adding a New Field _ Microsoft Docs_files/open-commenting.ui.v1.0.2-7-g1b78816.master.min.js.download"></script></head>
+
+<body lang="en-us" dir="ltr" cz-shortcut-listen="true" style="overflow: auto;">
+	<div id="headerAreaHolder" ms.pgarea="header" data-bi-name="header">
+		<section id="headerArea" data-m="{&quot;cN&quot;:&quot;headerArea&quot;,&quot;cT&quot;:&quot;Area_coreuiArea&quot;,&quot;id&quot;:&quot;a1Body&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;Body&quot;}">
+                    <div id="headerRegion" data-region-key="headerregion" data-m="{&quot;cN&quot;:&quot;headerRegion&quot;,&quot;cT&quot;:&quot;Region_coreui-region&quot;,&quot;id&quot;:&quot;r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;a1&quot;}">
+
+    <div id="headerUniversalHeader" data-m="{&quot;cN&quot;:&quot;headerUniversalHeader&quot;,&quot;cT&quot;:&quot;Module_coreui-universalheader&quot;,&quot;id&quot;:&quot;m1r1a1&quot;,&quot;sN&quot;:1,&quot;aN&quot;:&quot;r1a1&quot;}" data-module-id="Category|headerRegion|headerRegion|headerUniversalHeader|coreui-universalheader">
+        
+
+
+
+
+
+
+        <a class="m-skip-to-main" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#main" tabindex="0" style="z-index:800" ms.title="Skip to content">Skip to main content</a>
+
+<header role="banner" class="c-universal-header context-uhf js" itemscope="itemscope" data-header-footprint="en-us/MSDocs/MSDocsHeader-DocsL1" itemtype="http://schema.org/Organization">
+    <div class="theme-light js-global-head f-closed " ms.pgarea="Universal Header">
+        <div>
+            <button class="c-action-trigger c-glyph glyph-global-nav-button" aria-label="Toggle menu" aria-expanded="false" ms.title="Mobile menu button"></button>
+            <button class="c-action-trigger c-glyph glyph-arrow-htmllegacy" aria-label="Close search" aria-expanded="false" ms.title="Close Search"></button>
+                    <a id="uhfLogo" class="c-logo" itemprop="url" href="https://www.microsoft.com/" aria-label="Microsoft" ms.cmpgrp="logo">
+                        <img itemprop="logo" itemscope="itemscope" class="c-image" alt="Microsoft" src="./Adding a New Field _ Microsoft Docs_files/microsoft-gray.png">
+                        <span>Microsoft</span>
+                    </a>
+            <div class="f-mobile-title">
+                <button class="c-action-trigger c-glyph glyph-chevron-left" aria-label="See more menu options" ms.title="Mobile back button"></button>
+                <span data-global-title="Microsoft home" class="js-mobile-title">Docs</span>
+                <button class="c-action-trigger c-glyph glyph-chevron-right" aria-label="See more menu options" ms.title="Mobile forward button"></button>
+            </div>
+                    <nav id="uhf-g-nav" aria-labelledby="uhfLogo" role="navigation" ms.cmpgrp="nav">
+            <ul>
+                        <li>
+                            <div class="c-uhf-menu js-nav-menu">
+
+                                <button id="Technologies-navigation" aria-expanded="false" aria-haspopup="true" ms.title="Technologies" ms.interactiontype="14" style="white-space:nowrap">Technologies</button>
+                                <ul aria-labelledby="Technologies-navigation" aria-hidden="true" ms.cmpnm="Technologies">
+    <li ms.cmpnm="Technologies_.NET">
+        <a id="shellmenu_1" href="https://www.dot.net/" ms.title="Technologies_.NET">.NET</a>
+        
+    </li>
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Windows">
+
+        <button id="Windows-navigation" aria-expanded="false" ms.title="Windows" ms.interactiontype="14">Windows</button>
+        <ul aria-labelledby="Windows-navigation" aria-hidden="true">
+    <li ms.cmpnm="Windows_Apps">
+        <a id="shellmenu_3" href="https://developer.microsoft.com/windows" ms.title="Windows_Apps">Apps</a>
+        
+    </li>
+    <li ms.cmpnm="Windows_InternetofThings">
+        <a id="shellmenu_4" href="https://developer.microsoft.com/windows/iot" ms.title="Windows_InternetofThings">Internet of Things</a>
+        
+    </li>
+    <li ms.cmpnm="Windows_Holographic">
+        <a id="shellmenu_5" href="https://developer.microsoft.com/en-us/windows/mixed-reality" ms.title="Windows_Holographic">Mixed Reality</a>
+        
+    </li>
+    <li ms.cmpnm="Windows_MicrosoftEdge">
+        <a id="shellmenu_6" href="https://developer.microsoft.com/microsoft-edge" ms.title="Windows_MicrosoftEdge">Microsoft Edge</a>
+        
+    </li>
+    <li ms.cmpnm="Windows_Hardware ">
+        <a id="shellmenu_7" href="https://developer.microsoft.com/windows/hardware" ms.title="Windows_Hardware ">Hardware </a>
+        
+    </li>
+    <li ms.cmpnm="Windows_WindowsTechCenter">
+        <a id="shellmenu_8" href="https://technet.microsoft.com/windows" ms.title="Windows_WindowsTechCenter">IT Center</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="MicrosoftAzure">
+
+        <button id="MicrosoftAzure-navigation" aria-expanded="false" ms.title="MicrosoftAzure" ms.interactiontype="14">Microsoft Azure </button>
+        <ul aria-labelledby="MicrosoftAzure-navigation" aria-hidden="true">
+    <li ms.cmpnm="MicrosoftAzure_WhatisAzure">
+        <a id="shellmenu_10" href="https://azure.microsoft.com/overview/what-is-azure/" ms.title="MicrosoftAzure_WhatisAzure">What is Azure </a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftAzure_Products">
+        <a id="shellmenu_11" href="https://azure.microsoft.com/services/" ms.title="MicrosoftAzure_Products">Products</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftAzure_Solutions">
+        <a id="shellmenu_12" href="https://azure.microsoft.com/solutions/?v=4" ms.title="MicrosoftAzure_Solutions">Solutions</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftAzure_Pricing">
+        <a id="shellmenu_13" href="https://azure.microsoft.com/pricing/" ms.title="MicrosoftAzure_Pricing">Pricing</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftAzure_CreateaFreeAccount">
+        <a id="shellmenu_14" href="https://azure.microsoft.com/free" ms.title="MicrosoftAzure_CreateaFreeAccount">Create a free account</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="MicrosoftVisualStudio">
+
+        <button id="VisualStudio-navigation" aria-expanded="false" ms.title="MicrosoftVisualStudio" ms.interactiontype="14">Visual Studio </button>
+        <ul aria-labelledby="VisualStudio-navigation" aria-hidden="true">
+    <li ms.cmpnm="MicrosoftVisualStudio_VisualStudio">
+        <a id="shellmenu_16" href="https://www.visualstudio.com/" ms.title="MicrosoftVisualStudio_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftVisualStudio_VisualStudioIDE">
+        <a id="shellmenu_17" href="https://www.visualstudio.com/vs/" ms.title="MicrosoftVisualStudio_VisualStudioIDE">Visual Studio IDE</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftVisualStudio_VisualStudioTeamServices">
+        <a id="shellmenu_18" href="https://www.visualstudio.com/team-services/" ms.title="MicrosoftVisualStudio_VisualStudioTeamServices">Visual Studio Team Services</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftVisualStudio_VisualStudioCode">
+        <a id="shellmenu_19" href="https://code.visualstudio.com/" ms.title="MicrosoftVisualStudio_VisualStudioCode">Visual Studio Code</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftVisualStudio_Xamarin">
+        <a id="shellmenu_20" href="https://www.xamarin.com/" ms.title="MicrosoftVisualStudio_Xamarin">Xamarin</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftVisualStudio_VisualStudioDevEssentials">
+        <a id="shellmenu_21" href="https://www.visualstudio.com/dev-essentials/" ms.title="MicrosoftVisualStudio_VisualStudioDevEssentials">Visual Studio Dev Essentials</a>
+        
+    </li>
+    <li ms.cmpnm="MicrosoftVisualStudio_Subscriptions">
+        <a id="shellmenu_22" href="https://www.visualstudio.com/subscriptions/" ms.title="MicrosoftVisualStudio_Subscriptions">Subscriptions</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Office">
+
+        <button id="Office-navigation" aria-expanded="false" ms.title="Office" ms.interactiontype="14">Office</button>
+        <ul aria-labelledby="Office-navigation" aria-hidden="true">
+    <li ms.cmpnm="Office_OfficeDevCenter">
+        <a id="shellmenu_24" href="https://dev.office.com/" ms.title="Office_OfficeDevCenter">Office Dev Center</a>
+        
+    </li>
+    <li ms.cmpnm="Office_Office365forITpros">
+        <a id="shellmenu_25" href="https://technet.microsoft.com/en-us/office/dn788774" ms.title="Office_Office365forITpros">Office 365 for IT pros</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li ms.cmpnm="Microsoft Graph">
+        <a id="shellmenu_26" href="https://graph.microsoft.io/en-us/docs" ms.title="Microsoft Graph">Microsoft Graph</a>
+        
+    </li>
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Services ">
+
+        <button id="Services-navigation" aria-expanded="false" ms.title="Services " ms.interactiontype="14">Services </button>
+        <ul aria-labelledby="Services-navigation" aria-hidden="true">
+    <li ms.cmpnm="Services_OfficeDevCenter">
+        <a id="shellmenu_28" href="https://developer.microsoft.com/store" ms.title="Services_OfficeDevCenter">Store</a>
+        
+    </li>
+    <li ms.cmpnm="Services_Cortana">
+        <a id="shellmenu_29" href="https://developer.microsoft.com/cortana" ms.title="Services_Cortana">Cortana</a>
+        
+    </li>
+    <li ms.cmpnm="Services_Bing">
+        <a id="shellmenu_30" href="https://bing.com/dev/dev-center" ms.title="Services_Bing">Bing</a>
+        
+    </li>
+    <li ms.cmpnm="Services_ApplicationInsights">
+        <a id="shellmenu_31" href="https://azure.microsoft.com/services/application-insights" ms.title="Services_ApplicationInsights">Application Insights</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-uhf-menu js-nav-menu">
+
+                                <button id="Documentation-navigation" aria-expanded="false" aria-haspopup="true" ms.title="Documentation" ms.interactiontype="14" style="white-space:nowrap">Documentation</button>
+                                <ul aria-labelledby="Documentation-navigation" aria-hidden="true" ms.cmpnm="Documentation">
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Build_DeveloperCenters">
+
+        <button id="Platforms-navigation" aria-expanded="false" ms.title="Build_DeveloperCenters" ms.interactiontype="14">Platforms</button>
+        <ul aria-labelledby="Platforms-navigation" aria-hidden="true">
+    <li ms.cmpnm="Documentation_Platforms_.NET">
+        <a id="shellmenu_34" href="https://www.dot.net/" ms.title="Documentation_Platforms_.NET">.NET</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_MicrosoftAzure">
+        <a id="shellmenu_35" href="https://azure.microsoft.com/en-us/documentation/" ms.title="Build_DeveloperCenters_MicrosoftAzure">Microsoft Azure</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_MicrosoftGraph">
+        <a id="shellmenu_36" href="https://graph.microsoft.io/en-us/docs" ms.title="Build_DeveloperCenters_MicrosoftGraph">Microsoft Graph</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_VisualStudio">
+        <a id="shellmenu_37" href="https://www.visualstudio.com/vs/getting-started/" ms.title="Build_DeveloperCenters_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_VisualStudioTeamServices">
+        <a id="shellmenu_38" href="https://www.visualstudio.com/docs/overview" ms.title="Build_DeveloperCenters_VisualStudioTeamServices">Visual Studio Team Services</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_Windows">
+        <a id="shellmenu_39" href="https://docs.microsoft.com/en-us/windows" ms.title="Build_DeveloperCenters_Windows">Windows</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_Office">
+        <a id="shellmenu_40" href="https://dev.office.com/docs" ms.title="Build_DeveloperCenters_Office">Office</a>
+        
+    </li>
+    <li ms.cmpnm="Build_DeveloperCenters_AllDeveloperCenters">
+        <a id="shellmenu_41" href="https://developer.microsoft.com/en-us/" ms.title="Build_DeveloperCenters_AllDeveloperCenters">All Developer Centers</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li ms.cmpnm="Learn_TechNet">
+        <a id="shellmenu_42" href="https://technet.microsoft.com/" ms.title="Learn_TechNet">TechNet</a>
+        
+    </li>
+    <li ms.cmpnm="Learn_MicrosoftDeveloperNetwork">
+        <a id="shellmenu_43" href="https://msdn.microsoft.com/" ms.title="Learn_MicrosoftDeveloperNetwork">Microsoft Developer Network</a>
+        
+    </li>
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Build_TechCenters">
+
+        <button id="ITTechCenters-navigation" aria-expanded="false" ms.title="Build_TechCenters" ms.interactiontype="14">IT TechCenters</button>
+        <ul aria-labelledby="ITTechCenters-navigation" aria-hidden="true">
+    <li ms.cmpnm="TechCenter_WindowsTechCenter">
+        <a id="shellmenu_45" href="https://technet.microsoft.com/windows" ms.title="TechCenter_WindowsTechCenter">Windows IT Center</a>
+        
+    </li>
+    <li ms.cmpnm="TechCenter_Office365forITpros">
+        <a id="shellmenu_46" href="https://technet.microsoft.com/en-us/office/dn788774" ms.title="TechCenter_Office365forITpros">Office 365 for IT Pros</a>
+        
+    </li>
+    <li ms.cmpnm="TechCenter_AllTechcenters">
+        <a id="shellmenu_47" href="https://technet.microsoft.com/en-us/bb421517.aspx?wt.svl=more_centers_link" ms.title="TechCenter_AllTechcenters">All IT TechCenters</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Build_Downloads">
+
+        <button id="Downloads-navigation" aria-expanded="false" ms.title="Build_Downloads" ms.interactiontype="14">Downloads</button>
+        <ul aria-labelledby="Downloads-navigation" aria-hidden="true">
+    <li ms.cmpnm="Build_Downloads_MicrosoftDownloadCenter">
+        <a id="shellmenu_49" href="https://www.microsoft.com/en-us/download/developer-tools.aspx" ms.title="Build_Downloads_MicrosoftDownloadCenter">Microsoft Download Center</a>
+        
+    </li>
+    <li ms.cmpnm="Build_Downloads_Microsoft Azure">
+        <a id="shellmenu_50" href="https://azure.microsoft.com/en-us/downloads/" ms.title="Build_Downloads_Microsoft Azure">Microsoft Azure</a>
+        
+    </li>
+    <li ms.cmpnm="Build_Downloads_VisualStudio">
+        <a id="shellmenu_51" href="https://www.visualstudio.com/downloads/" ms.title="Build_Downloads_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li ms.cmpnm="Build_Downloads_SDKS">
+        <a id="shellmenu_52" href="https://msdn.microsoft.com/en-us/microsoft-sdks-msdn" ms.title="Build_Downloads_SDKS">SDKs</a>
+        
+    </li>
+    <li ms.cmpnm="Build_Downloads_Windows">
+        <a id="shellmenu_53" href="https://developer.microsoft.com/en-us/windows/downloads" ms.title="Build_Downloads_Windows">Windows</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Build_Samples">
+
+        <button id="Codesamples-navigation" aria-expanded="false" ms.title="Build_Samples" ms.interactiontype="14">Code samples</button>
+        <ul aria-labelledby="Codesamples-navigation" aria-hidden="true">
+    <li ms.cmpnm="CodeSamples_Office">
+        <a id="shellmenu_55" href="https://dev.office.com/code-samples" ms.title="CodeSamples_Office">Office</a>
+        
+    </li>
+    <li ms.cmpnm="CodeSamples_MicrosoftGraph">
+        <a id="shellmenu_56" href="https://graph.microsoft.io/en-us/code-samples-and-sdks" ms.title="CodeSamples_MicrosoftGraph">Microsoft Graph</a>
+        
+    </li>
+    <li ms.cmpnm="CodeSamples_MSDN">
+        <a id="shellmenu_57" href="https://code.msdn.microsoft.com/" ms.title="CodeSamples_MSDN">MSDN</a>
+        
+    </li>
+    <li ms.cmpnm="CodeSamples_Azure">
+        <a id="shellmenu_58" href="https://azure.microsoft.com/en-us/resources/samples/" ms.title="CodeSamples_Azure">Azure</a>
+        
+    </li>
+    <li ms.cmpnm="CodeSamples_Windows">
+        <a id="shellmenu_59" href="https://developer.microsoft.com/en-us/windows/samples" ms.title="CodeSamples_Windows">Windows</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li ms.cmpnm="documentation_powershell_scripts">
+        <a id="shellmenu_60" href="https://technet.microsoft.com/scriptcenter" ms.title="documentation_powershell_scripts">PowerShell scripts</a>
+        
+    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="c-uhf-menu js-nav-menu">
+
+                                <button id="Resources-navigation" aria-expanded="false" aria-haspopup="true" ms.title="Resources " ms.interactiontype="14" style="white-space:nowrap">Resources</button>
+                                <ul aria-labelledby="Resources-navigation" aria-hidden="true" ms.cmpnm="Resources ">
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Connect_Blogs">
+
+        <button id="Blogs-navigation" aria-expanded="false" ms.title="Connect_Blogs" ms.interactiontype="14">Blogs</button>
+        <ul aria-labelledby="Blogs-navigation" aria-hidden="true">
+    <li ms.cmpnm="Connect_Blogs_MicrosoftAzure">
+        <a id="shellmenu_63" href="https://azure.microsoft.com/en-us/blog/" ms.title="Connect_Blogs_MicrosoftAzure">Microsoft Azure</a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Blogs_VisualStudio">
+        <a id="shellmenu_64" href="https://blogs.msdn.microsoft.com/visualstudio/" ms.title="Connect_Blogs_VisualStudio">Visual Studio</a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Blogs_VisualStudioTeamServices">
+        <a id="shellmenu_65" href="https://blogs.msdn.microsoft.com/visualstudioalm/" ms.title="Connect_Blogs_VisualStudioTeamServices">Visual Studio Team Services </a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Blogs_DevloperTools">
+        <a id="shellmenu_66" href="https://blogs.msdn.microsoft.com/developer-tools/" ms.title="Connect_Blogs_DevloperTools">Developer tools</a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Blogs_OfficeDevBlog">
+        <a id="shellmenu_67" href="https://dev.office.com/blogs" ms.title="Connect_Blogs_OfficeDevBlog">Office Dev Blog</a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Blogs_ServerandManagement">
+        <a id="shellmenu_68" href="https://blogs.technet.microsoft.com/server-management/" ms.title="Connect_Blogs_ServerandManagement">Server &amp; management</a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Blogs_Windows">
+        <a id="shellmenu_69" href="https://blogs.windows.com/buildingapps/" ms.title="Connect_Blogs_Windows">Windows</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Resources_CommunityandForums">
+
+        <button id="Community&amp;Forums-navigation" aria-expanded="false" ms.title="Resources_CommunityandForums" ms.interactiontype="14">Community &amp; Forums</button>
+        <ul aria-labelledby="Community&amp;Forums-navigation" aria-hidden="true">
+    <li ms.cmpnm="CommunityandForums_Developers">
+        <a id="shellmenu_71" href="https://social.msdn.microsoft.com/Forums/en-US/home" ms.title="CommunityandForums_Developers">Developers</a>
+        
+    </li>
+    <li ms.cmpnm="CommunityandForums_Technet">
+        <a id="shellmenu_72" href="https://social.technet.microsoft.com/Forums/en-US/home" ms.title="CommunityandForums_Technet">TechNet</a>
+        
+    </li>
+    <li ms.cmpnm="CommunityandForums_MicrosoftTechCommunity">
+        <a id="shellmenu_73" href="https://techcommunity.microsoft.com/" ms.title="CommunityandForums_MicrosoftTechCommunity">Microsoft Tech Community</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Connect_CommunityandForums">
+
+        <button id="Subscriptions-navigation" aria-expanded="false" ms.title="Connect_CommunityandForums" ms.interactiontype="14">Subscriptions</button>
+        <ul aria-labelledby="Subscriptions-navigation" aria-hidden="true">
+    <li ms.cmpnm="Subscriptions_VisualStudioMSDNSubscriptions">
+        <a id="shellmenu_75" href="https://my.visualstudio.com/Benefits?wt.mc_id=o~msft~UHF&amp;campaign=o~msft~UHF" ms.title="Subscriptions_VisualStudioMSDNSubscriptions">Visual Studio (MSDN) subscriptions</a>
+        
+    </li>
+    <li ms.cmpnm="Subscriptions_ITProCloudEssentials">
+        <a id="shellmenu_76" href="https://www.microsoft.com/cloudessentials" ms.title="Subscriptions_ITProCloudEssentials">Microsoft Cloud Essentials</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li class="f-sub-menu js-nav-menu" ms.cmpnm="Resources_Training">
+
+        <button id="Training-navigation" aria-expanded="false" ms.title="Resources_Training" ms.interactiontype="14">Training</button>
+        <ul aria-labelledby="Training-navigation" aria-hidden="true">
+    <li ms.cmpnm="Training_MicrosoftVirtualAcademy">
+        <a id="shellmenu_78" href="https://mva.microsoft.com/" ms.title="Training_MicrosoftVirtualAcademy">Microsoft Virtual Academy </a>
+        
+    </li>
+    <li ms.cmpnm="Training_ITProCareerCenter">
+        <a id="shellmenu_79" href="https://www.microsoft.com/itprocareercenter" ms.title="Training_ITProCareerCenter">IT Pro Career Center</a>
+        
+    </li>
+        </ul>
+        
+    </li>   
+    <li ms.cmpnm="Resources_TechNetEvaluationCenter">
+        <a id="shellmenu_80" href="https://www.microsoft.com/evalcenter/" ms.title="Resources_TechNetEvaluationCenter">TechNet Evaluation Center</a>
+        
+    </li>
+    <li ms.cmpnm="Connect_Channel9">
+        <a id="shellmenu_81" href="https://channel9.msdn.com/" ms.title="Connect_Channel9">Channel 9</a>
+        
+    </li>
+                                    
+                                </ul>
+                            </div>
+                        </li>
+            </ul>
+            
+        </nav>
+
+                <div ms.cmpgrp="Header actions">
+                            <form class="c-search" autocomplete="off" id="searchForm" name="searchForm" role="search" action="https://docs.microsoft.com/en-us/search/index" method="GET" data-seautosuggest="{&quot;queryParams&quot;:{&quot;market&quot;:&quot;en-us&quot;,&quot;clientId&quot;:&quot;7F27B536-CF6B-4C65-8638-A0F8CBDFCA65&quot;,&quot;sources&quot;:&quot;Microsoft-Terms,Iris-Products,DCatAll-Products&quot;,&quot;counts&quot;:&quot;5,1,5&quot;},&quot;familyNames&quot;:{&quot;Apps&quot;:&quot;App&quot;,&quot;Bundles&quot;:&quot;Bundle&quot;,&quot;Devices&quot;:&quot;Device&quot;,&quot;Fees&quot;:&quot;Fee&quot;,&quot;Games&quot;:&quot;Game&quot;,&quot;MusicAlbums&quot;:&quot;Album&quot;,&quot;MusicTracks&quot;:&quot;Song&quot;,&quot;MusicVideos&quot;:&quot;Video&quot;,&quot;MusicArtists&quot;:&quot;Artist&quot;,&quot;OperatingSystem&quot;:&quot;Operating System&quot;,&quot;Software&quot;:&quot;Software&quot;,&quot;Movies&quot;:&quot;Movie&quot;,&quot;TV&quot;:&quot;TV&quot;,&quot;CSV&quot;:&quot;Gift Card&quot;,&quot;VideoActor&quot;:&quot;Actor&quot;}}" data-seautosuggestapi="https://www.microsoft.com/services/api/v3/suggest" aria-expanded="false">
+            <input id="cli_shellHeaderSearchInput" aria-label="Search" role="combobox" aria-autocomplete="list" aria-controls="universal-header-search-auto-suggest-transparent" type="search" name="search" placeholder="Search" ms.title="SearchBox" style="padding-left: 125px;">
+            <button id="search" aria-label="Search" class="c-glyph" ms.title="Search" data-bi-dnt="true"></button>
+            <div class="m-auto-suggest" id="universal-header-search-auto-suggest-transparent" role="group">
+                <ul class="c-menu" aria-hidden="true" data-bi-dnt="true" data-js-auto-suggest-position="default" role="listbox" data-tel="wedcs" ms.cmpgrp="search suggestions"></ul>
+                <ul class="c-menu f-auto-suggest-no-results" aria-hidden="true" data-js-auto-suggest-postion="default" data-js-auto-suggest-position="default" tabindex="0">
+                    <li class="c-menu-item"> <span tabindex="-1">No results</span></li>
+                </ul>
+            </div>
+            
+        <a class="searchScope" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#" title="Search filter set to  &#39;ASP.NET Core&#39;. Tap to remove filter.">ASP.NET Core</a><input type="hidden" name="scope" value="ASP.NET Core"></form>
+
+                    
+                    
+                    
+                    
+                </div>
+        </div>
+        
+        
+    </div>
+            <div class="theme-dark brand-neutral js-cat-head" itemprop="brand" itemscope="itemscope" itemtype="http://schema.org/Brand" ms.cmpgrp="UHF category nav">
+
+<div>
+        <a id="uhfCatLogo" class="c-logo" href="https://docs.microsoft.com/" aria-label="Docs" itemprop="url" ms.title="Docs">
+                <span>Docs</span>
+        </a>
+    
+<button class="c-action-trigger c-glyph glyph-chevron-left" ms.title="Previous" tabindex="-1" style="display: none;"></button>
+    
+    <button class="c-action-trigger c-glyph glyph-chevron-right" ms.title="Next" tabindex="-1" style="display: none;"></button>
+            <nav id="uhf-c-nav" role="navigation" aria-labelledby="uhfCatLogo">
+<a id="mobileHomeLink" class="c-uhf-nav-link x-uhf-zero-width" href="https://docs.microsoft.com/" ms.title="" style="transition: margin 0.667s cubic-bezier(0.16, 1, 0.29, 0.99);">https://docs.microsoft.com</a>
+                <style>
+                    @media only screen and (min-width:768px) {
+                        .x-uhf-zero-width {
+                            visibility: hidden !important;
+                            width: 0 !important;
+                            padding: 0 !important;
+                        }
+                    }
+                </style>
+
+<a id="shellmenu_82" class="c-uhf-nav-link" href="https://docs.microsoft.com/windows" ms.title="docsWindows">Windows</a><a id="shellmenu_83" class="c-uhf-nav-link" href="https://docs.microsoft.com/azure/" ms.title="docsAzure">Microsoft Azure</a><a id="shellmenu_84" class="c-uhf-nav-link" href="https://docs.microsoft.com/visualstudio/products" ms.title="docsVisualStudio">Visual Studio</a><a id="shellmenu_85" class="c-uhf-nav-link" href="https://dev.office.com/" ms.title="docsOffice">Office</a><div class="c-uhf-menu js-nav-menu">
+                    <button id="shellmenu_86" aria-expanded="false" aria-haspopup="true" ms.title="docsMore">More</button>
+                    <ul class="" aria-labelledby="shellmenu_86" aria-hidden="true" ms.cmpnm="docsMore">
+    <li ms.cmpnm="docsNET">
+        <a id="shellmenu_87" href="https://docs.microsoft.com/dotnet/" ms.title="docsNET">.NET</a>
+        
+    </li>
+    <li ms.cmpnm="docsASPNET">
+        <a id="shellmenu_88" href="https://docs.microsoft.com/aspnet/" ms.title="docsASPNET">ASP.NET</a>
+        
+    </li>
+    <li ms.cmpnm="docsCpp">
+        <a id="shellmenu_89" href="https://docs.microsoft.com/cpp/" ms.title="docsCpp">C++</a>
+        
+    </li>
+    <li ms.cmpnm="docsDynamics">
+        <a id="shellmenu_90" href="https://docs.microsoft.com/dynamics365/" ms.title="docsDynamics">Dynamics 365</a>
+        
+    </li>
+    <li ms.cmpnm="docsEducation">
+        <a id="shellmenu_91" href="https://docs.microsoft.com/education/" ms.title="docsEducation">Education</a>
+        
+    </li>
+    <li ms.cmpnm="docsEM">
+        <a id="shellmenu_92" href="https://docs.microsoft.com/enterprise-mobility-security/" ms.title="docsEM">Enterprise Mobility + Security</a>
+        
+    </li>
+    <li ms.cmpnm="docsHealthVault">
+        <a id="shellmenu_93" href="https://docs.microsoft.com/healthvault/" ms.title="docsHealthVault">HealthVault</a>
+        
+    </li>
+    <li ms.cmpnm="docsIntune">
+        <a id="shellmenu_94" href="https://docs.microsoft.com/intune/" ms.title="docsIntune">Intune</a>
+        
+    </li>
+    <li ms.cmpnm="docsNuget">
+        <a id="shellmenu_95" href="https://docs.microsoft.com/nuget/" ms.title="docsNuget">NuGet</a>
+        
+    </li>
+    <li ms.cmpnm="docsPowerShell">
+        <a id="shellmenu_96" href="https://docs.microsoft.com/powershell/" ms.title="docsPowerShell">PowerShell</a>
+        
+    </li>
+    <li ms.cmpnm="docsSCCM">
+        <a id="shellmenu_97" href="https://docs.microsoft.com/sccm/" ms.title="docsSCCM">System Center Configuration Manager</a>
+        
+    </li>
+    <li ms.cmpnm="docsSql">
+        <a id="shellmenu_98" href="https://docs.microsoft.com/sql/" ms.title="docsSql">SQL Server</a>
+        
+    </li>
+    <li ms.cmpnm="docsSystemCenter">
+        <a id="shellmenu_99" href="https://docs.microsoft.com/system-center/" ms.title="docsSystemCenter">System Center</a>
+        
+    </li>
+    <li ms.cmpnm="docsXamarin">
+        <a id="shellmenu_100" href="https://developer.xamarin.com/" ms.title="docsXamarin">Xamarin</a>
+        
+    </li>
+                        
+                    </ul>
+                </div>                    </nav>
+
+</div>
+
+
+            
+        </div>
+
+    
+</header>
+
+
+    </div>
+            </div>
+
+    </section>
+	</div>
+
+	<div class="container mainContainer" lang="en-us" dir="ltr" ms.pgarea="body" data-bi-name="body">
+		<main role="main" ms.cmpgrp="content" data-bi-name="content">
+				<div id="main">
+
+						<h1 id="adding-a-new-field" sourcefile="tutorials/first-mvc-app/new-field.md" sourcestartlinenumber="15" sourceendlinenumber="15">Adding a New Field</h1>
+						<div class="metadata" ms.cmpgrp="page info" data-bi-name="page info">
+							<div>
+								<time class="date" datetime="10/14/2016 12:00:00 AM">2016-10-14</time>
+								<span class="reading-time">3 min to read</span>
+									<span class="contributors-text">Contributors</span>
+									<ul class="contributors" ms.cmpgrp="contributors" data-bi-name="contributors">
+												<li><a href="https://github.com/Rick-Anderson" title="Rick Anderson" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="./Adding a New Field _ Microsoft Docs_files/Rick-Anderson.png" alt="Rick Anderson"></a></li>
+												<li><a href="https://github.com/tdykstra" title="Tom Dykstra" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="./Adding a New Field _ Microsoft Docs_files/tdykstra.png" alt="Tom Dykstra"></a></li>
+												<li><a href="https://github.com/v-anpasi" title="Andy Pasic" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="./Adding a New Field _ Microsoft Docs_files/v-anpasi.png" alt="Andy Pasic"></a></li>
+												<li><a href="https://github.com/guardrex" title="Luke Latham" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="./Adding a New Field _ Microsoft Docs_files/guardrex.png" alt="Luke Latham"></a></li>
+												<li><a href="https://github.com/stevehoag" title="Steve Hoag" ms.cmpnm="contributorprofile" data-bi-name="contributorprofile"><img src="./Adding a New Field _ Microsoft Docs_files/stevehoag.png" alt="Steve Hoag"></a></li>
+											<li><a href="https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app/new-field.md" ms.cmpnm="contributorshowall" data-bi-name="contributorshowall">all</a></li>
+									</ul>
+							</div>
+
+
+							<nav id="center-doc-outline" class="doc-outline" ms.cmpgrp="intopic toc" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+								<h3>In this article</h3>
+							<ol><li><a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#adding-a-rating-property-to-the-movie-model">Adding a Rating Property to the Movie Model</a></li></ol></nav>
+
+						</div>
+
+						<div><div class="content">
+<p>By <a href="https://twitter.com/RickAndMSFT" data-linktype="external">Rick Anderson</a></p>
+<p>In this section you'll use <a href="http://docs.efproject.net/en/latest/platforms/aspnetcore/new-db.html" data-linktype="external">Entity Framework</a> Code First Migrations to add a new field to the model and migrate that change to the database.</p>
+<p>When you use EF Code First to automatically create a database, Code First adds a table to the database to help track whether the schema of the database is in sync with the model classes it was generated from. If they aren't in sync, EF throws an exception. This makes it easier to find inconsistent database/code issues.</p>
+<h2 id="adding-a-rating-property-to-the-movie-model">Adding a Rating Property to the Movie Model</h2>
+<p>Open the <em>Models/Movie.cs</em> file and add a <code>Rating</code> property:</p>
+<div class="codeHeader lang-csharp" data-bi-name="code-header"><span class="language">C#</span><button class="action copy" data-bi-name="copy"><span>Copy</span></button></div><pre><code class="lang-csharp" data-src="https://github.com/aspnet/Docs/blob/live/aspnetcore/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/MovieDateRating.cs" name="Main" highlight-lines="11" data-bi-name="code-block"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">Movie</span>
+{
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> ID { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Title { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+
+    [<span class="hljs-meta">Display(Name = <span class="hljs-meta-string">"Release Date"</span>)</span>]
+    [<span class="hljs-meta">DataType(DataType.Date)</span>]
+    <span class="hljs-keyword">public</span> DateTime ReleaseDate { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Genre { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+    <span class="hljs-keyword">public</span> <span class="hljs-keyword">decimal</span> Price { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }
+<span class="line-highlight">    <span class="hljs-keyword">public</span> <span class="hljs-keyword">string</span> Rating { <span class="hljs-keyword">get</span>; <span class="hljs-keyword">set</span>; }</span>
+}
+</code></pre><p>Build the app (Ctrl+Shift+B).</p>
+<p>Because you've added a new field to the <code>Movie</code> class, you also need to update the binding white list so this new property will be included. In <em>MoviesController.cs</em>, update the <code>[Bind]</code> attribute for both the <code>Create</code> and <code>Edit</code> action methods to include the <code>Rating</code> property:</p>
+<div class="codeHeader lang-csharp" data-bi-name="code-header"><span class="language">C#</span><button class="action copy" data-bi-name="copy"><span>Copy</span></button></div><pre><code class="lang-csharp" data-bi-name="code-block">[<span class="hljs-meta">Bind(<span class="hljs-meta-string">"ID,Title,ReleaseDate,Genre,Price,Rating"</span>)</span>]
+</code></pre><p>You also need to update the view templates in order to display, create and edit the new <code>Rating</code> property in the browser view.</p>
+<p>Edit the <em>/Views/Movies/Index.cshtml</em> file and add a <code>Rating</code> field:</p>
+<div class="codeHeader lang-HTML" data-bi-name="code-header"><span class="language">HTML</span><button class="action copy" data-bi-name="copy"><span>Copy</span></button></div><pre><code class="lang-HTML" data-src="https://github.com/aspnet/Docs/blob/live/aspnetcore/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Views/Movies/IndexGenreRating.cshtml" name="Main" highlight-lines="17,39" data-bi-name="code-block"><span class="hljs-tag">&lt;<span class="hljs-name">table</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"table"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>
+                @Html.DisplayNameFor(model =&gt; model.movies[0].Title)
+            <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>
+                @Html.DisplayNameFor(model =&gt; model.movies[0].ReleaseDate)
+            <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>
+                @Html.DisplayNameFor(model =&gt; model.movies[0].Genre)
+            <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>
+                @Html.DisplayNameFor(model =&gt; model.movies[0].Price)
+            <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>
+<span class="line-highlight">                @Html.DisplayNameFor(model =&gt; model.movies[0].Rating)</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+        @foreach (var item in Model.movies)
+        {
+            <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+                    @Html.DisplayFor(modelItem =&gt; item.Title)
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+                    @Html.DisplayFor(modelItem =&gt; item.ReleaseDate)
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+                    @Html.DisplayFor(modelItem =&gt; item.Genre)
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+                    @Html.DisplayFor(modelItem =&gt; item.Price)
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+<span class="line-highlight">                    @Html.DisplayFor(modelItem =&gt; item.Rating)</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">td</span>&gt;</span>
+</code></pre><p>Update the <em>/Views/Movies/Create.cshtml</em> with a <code>Rating</code> field. You can copy/paste the previous "form group" and let intelliSense help you update the fields. IntelliSense works with <a class="xref" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro" data-linktype="relative-path">Tag Helpers</a>. Note: In the RTM verison of Visual Studio 2017 you need to install the <a href="https://marketplace.visualstudio.com/items?itemName=ms-madsk.RazorLanguageServices" data-linktype="external">Razor Language Services</a> for Razor intelliSense. This will be fixed in the next release.</p>
+<p><img src="./Adding a New Field _ Microsoft Docs_files/cr.png" alt="The developer has typed the letter R for the attribute value of asp-for in the second label element of the view. An Intellisense contextual menu has appeared showing the available fields, including Rating, which is highlighted in the list automatically. When the developer clicks the field or presses Enter on the keyboard, the value will be set to Rating." data-linktype="relative-path"></p>
+<p>The app won't work until we update the DB to include the new field. If you run it now, you'll get the following <code>SqlException</code>:</p>
+<p><code>SqlException: Invalid column name 'Rating'.</code></p>
+<p>You're seeing this error because the updated Movie model class is different than the schema of the Movie table of the existing database. (There's no Rating column in the database table.)</p>
+<p>There are a few approaches to resolving the error:</p>
+<ol>
+<li><p>Have the Entity Framework automatically drop and re-create the database based on the new model class schema. This approach is very convenient early in the development cycle when you are doing active development on a test database; it allows you to quickly evolve the model and database schema together. The downside, though, is that you lose existing data in the database — so you don't want to use this approach on a production database! Using an initializer to automatically seed a database with test data is often a productive way to develop an application.</p>
+</li>
+<li><p>Explicitly modify the schema of the existing database so that it matches the model classes. The advantage of this approach is that you keep your data. You can make this change either manually or by creating a database change script.</p>
+</li>
+<li><p>Use Code First Migrations to update the database schema.</p>
+</li>
+</ol>
+<p>For this tutorial, we'll use Code First Migrations.</p>
+<p>Update the <code>SeedData</code> class so that it provides a value for the new column. A sample change is shown below, but you'll want to make this change for each <code>new Movie</code>.</p>
+<div class="codeHeader lang-csharp" data-bi-name="code-header"><span class="language">C#</span><button class="action copy" data-bi-name="copy"><span>Copy</span></button></div><pre><code class="lang-csharp" data-src="https://github.com/aspnet/Docs/blob/live/aspnetcore/tutorials/first-mvc-app/start-mvc/sample/MvcMovie/Models/SeedDataRating.cs" name="Main" highlight-lines="6" data-bi-name="code-block"><span class="hljs-keyword">new</span> Movie
+{
+    Title = <span class="hljs-string">"When Harry Met Sally"</span>,
+    ReleaseDate = DateTime.Parse(<span class="hljs-string">"1989-1-11"</span>),
+    Genre = <span class="hljs-string">"Romantic Comedy"</span>,
+<span class="line-highlight">    Rating = <span class="hljs-string">"R"</span>,</span>
+    Price = <span class="hljs-number">7.99</span>M
+},
+</code></pre><p>Build the solution.</p>
+<p>From the <strong>Tools</strong> menu, select <strong>NuGet Package Manager &gt; Package Manager Console</strong>.</p>
+<p>  <img src="./Adding a New Field _ Microsoft Docs_files/pmc.png" alt="PMC menu" data-linktype="relative-path"></p>
+<p>In the PMC, enter the following commands:</p>
+<div class="codeHeader lang-PMC" data-bi-name="code-header"><span class="language">PMC</span><button class="action copy" data-bi-name="copy"><span>Copy</span></button></div><pre><code class="lang-PMC" data-bi-name="code-block"><span class="hljs-keyword">Add</span><span class="bash">-Migration Rating
+</span>Update-Database
+</code></pre><p>The <code>Add-Migration</code> command tells the migration framework to examine the current <code>Movie</code> model with the current <code>Movie</code> DB schema and create the necessary code to migrate the DB to the new model. The name "Rating" is arbitrary and is used to name the migration file. It's helpful to use a meaningful name for the migration file.</p>
+<p>If you delete all the records in the DB, the initialize will seed the DB and include the <code>Rating</code> field. You can do this with the delete links in the browser or from SSOX.</p>
+<p>Run the app and verify you can create/edit/display movies with a <code>Rating</code> field. You should also add the <code>Rating</code> field to the <code>Edit</code>, <code>Details</code>, and <code>Delete</code> view templates.</p>
+<div class="step-by-step"><p><a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/search" data-linktype="relative-path">Previous</a>
+<a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation" data-linktype="relative-path">Next</a>  </p>
+</div>
+</div></div>
+
+
+						<div id="comments-container" ms.cmpgrp="comments" data-bi-name="comments" role="form"></div>
+				</div>
+		</main>
+
+		<div class="pageActions">
+			<div id="page-actions" ms.cmpgrp="pageactions" data-bi-name="pageactions" role="complementary">
+				<div id="page-actions-content" style="top: 141.6px; bottom: 24px;">
+					<ul class="action-list">
+									<li>
+										<a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#comments-container" id="comments-link" ms.cmpnm="comments" data-bi-name="comments">
+											<i class="icon icon-comments"></i>Comments										</a>
+									</li>
+									<li id="contenteditbtn">
+										<a href="https://github.com/aspnet/Docs/blob/master/aspnetcore/tutorials/first-mvc-app/new-field.md" title="Edit This Document" ms.cmpnm="edit" data-bi-name="edit">
+											<i class="icon icon-editor"></i>Edit										</a>
+									</li>
+						<li>
+							<a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#" class="sharebutton" title="Share This Document" ms.cmpnm="share" data-bi-name="share"><i class="icon icon-share"></i>Share</a>
+							<div class="share-container" style="display: none;">
+									<div><a href="https://twitter.com/intent/tweet?original_referer=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Faspnet%2Fcore%2Ftutorials%2Ffirst-mvc-app%2Fnew-field%3FWT.mc_id%3Ddocs-twitter&amp;text=Adding%20a%20New%20Field%20%7C%20Microsoft%20Docs&amp;tw_p=tweetbutton&amp;url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Faspnet%2Fcore%2Ftutorials%2Ffirst-mvc-app%2Fnew-field%3FWT.mc_id%3Ddocs-twitter" class="share-twitter" ms.cmpnm="twitter" data-bi-name="twitter"><i class="icon icon-twitter"></i>Twitter</a></div>
+									<div><a href="https://www.linkedin.com/cws/share?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Faspnet%2Fcore%2Ftutorials%2Ffirst-mvc-app%2Fnew-field%3FWT.mc_id%3Ddocs-linkedin" class="share-linkedin" ms.cmpnm="share-linkedin" data-bi-name="linkedin"><i class="icon icon-linkedin"></i>LinkedIn</a></div>
+									<div><a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Faspnet%2Fcore%2Ftutorials%2Ffirst-mvc-app%2Fnew-field%3FWT.mc_id%3Ddocs-facebook" class="share-facebook" ms.cmpnm="facebook" data-bi-name="facebook"><i class="icon icon-facebook"></i>Facebook</a></div>
+									<div><a href="mailto:?subject=%5BShared%20Article%5D%20Adding%20a%20New%20Field%20%7C%20Microsoft%20Docs&amp;body=Adding%20a%20New%20Field%20%7C%20Microsoft%20Docs%0A%0Ahttps%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Faspnet%2Fcore%2Ftutorials%2Ffirst-mvc-app%2Fnew-field%3FWT.mc_id%3Ddocs-email" class="share-email" ms.cmpnm="email" data-bi-name="email"><i class="icon icon-email"></i>Email</a></div>
+							</div>
+						</li>
+						<li class="typeSep">|</li>
+						<li>
+							<label for="theme-selector">Theme</label>
+							<select id="theme-selector" data-bi-name="select-theme">
+								
+								<option value="">Light</option>
+								<option value="theme_night">Dark</option>
+							</select>
+						</li>
+					</ul>
+
+					<nav id="side-doc-outline" class="doc-outline" ms.cmpnm="intopic toc" data-bi-name="intopic toc" role="navigation" aria-label="On page navigation">
+						<h3>In this article</h3>
+					<ol><li><a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#adding-a-rating-property-to-the-movie-model">Adding a Rating Property to the Movie Model</a></li></ol></nav>
+
+				</div>
+			</div>
+		</div>
+
+		<ul class="breadcrumbs"><li><a href="https://docs.microsoft.com/en-us/">Docs</a></li><li><a href="https://docs.microsoft.com/en-us/aspnet/index">ASP.​NET</a></li><li><a href="https://docs.microsoft.com/en-us/aspnet/core/intro">ASP.​NET Core</a></li></ul>
+
+		<div class="sidebar" id="sidebar" ms.cmpgrp="left toc" data-bi-name="left toc" role="navigation" aria-label="main navigation" lang="en-us" dir="ltr">
+			<div id="sidebarContent" style="top: 141.6px; bottom: 24px;">
+				<div class="filterHolder">
+				<form class="tocFilter"><input placeholder="Filter" aria-label="Filter" type="search"><a href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#" title="Clear Filter" class="clearInput"><span class="screenReader">Clear Filter</span></a></form><div class="emptyFilterMessage">No results</div></div>
+				<nav class="toc" role="application"><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/" data-text="introduction ">Introduction</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/getting-started" data-text="getting started ">Getting Started</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/razor-pages/" data-text="create a web app ">Create a Web app</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api" data-text="create a web api ">Create a Web API</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/" data-text="tutorials ">Tutorials</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/" data-text="fundamentals ">Fundamentals</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/startup" data-text="application startup ">Application Startup</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/middleware" data-text="middleware ">Middleware</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/static-files" data-text="working with static files ">Working with Static Files</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing" data-text="routing ">Routing</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/url-rewriting" data-text="url rewriting middleware ">URL Rewriting Middleware</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/error-handling" data-text="error handling ">Error Handling</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/websockets" data-text="websockets ">Web​Sockets</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/localization" data-text="globalization and localization ">Globalization and localization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration" data-text="configuration ">Configuration</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/logging" data-text="logging ">Logging</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/file-providers" data-text="file providers ">File Providers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/dependency-injection" data-text="dependency injection ">Dependency Injection</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/environments" data-text="working with multiple environments ">Working with Multiple Environments</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/hosting" data-text="hosting ">Hosting</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/app-state" data-text="session and application state ">Session and application state</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/" data-text="servers ">Servers</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel" data-text="kestrel ">Kestrel</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/aspnet-core-module" data-text="asp.net core module ">ASP.​NET Core Module</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/weblistener" data-text="weblistener ">Web​Listener</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/httpsys" data-text="httpsys ">Http​Sys</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/request-features" data-text="request features ">Request Features</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/owin" data-text="open web interface for .net (owin) ">Open Web Interface for .NET (OWIN)</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/choose-aspnet-framework" data-text="choose between asp.net core and asp.net ">Choose between ASP.​NET Core and ASP.​NET</a></li><li><a tabindex="0" href="https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server" data-text="choose between .net core and .net framework runtime ">Choose between .NET Core and .NET Framework runtime</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/fundamentals/metapackage" data-text="microsoft.aspnetcore.all metapackage ">Microsoft.​Asp​Net​Core.​All metapackage</a></li></ul></li><li aria-expanded="true" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/overview" data-text="mvc ">MVC</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/razor-pages/" data-text="razor pages ">Razor Pages</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor" data-text="razor syntax ">Razor syntax</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/model-binding" data-text="model binding ">Model Binding</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/validation" data-text="model validation ">Model validation</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/overview" data-text="views ">Views</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/razor" data-text="razor syntax ">Razor syntax</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-compilation" data-text="view compilation ">View compilation</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/layout" data-text="layout ">Layout</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/intro" data-text="tag helpers ">Tag helpers</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/authoring" data-text="authoring tag helpers ">Authoring tag helpers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/working-with-forms" data-text="using tag helpers in forms ">Using tag helpers in forms</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/" data-text="built-in tag helpers ">Built-in tag helpers</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/anchortaghelper" data-text="anchor tag helper ">Anchor tag helper</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cachetaghelper" data-text="cache tag helper ">Cache tag helper</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/distributedcachetaghelper" data-text="distributed cache tag helper ">Distributed Cache tag helper</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/environmenttaghelper" data-text="environment tag helper ">Environment tag helper</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/tag-helpers/built-in/imagetaghelper" data-text="image tag helper ">Image tag helper</a></li></ul></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/partial" data-text="partial views ">Partial views</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/dependency-injection" data-text="dependency injection into views ">Dependency injection into views</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/views/view-components" data-text="view components ">View components</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/actions" data-text="controllers ">Controllers</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing" data-text="routing to controller actions ">Routing to controller actions</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/file-uploads" data-text="file uploads ">File uploads</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/dependency-injection" data-text="dependency injection into controllers ">Dependency injection into controllers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/testing" data-text="testing controllers ">Testing controllers</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/advanced/" data-text="advanced ">Advanced</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/application-model" data-text="working with the application model ">Working with the Application Model</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/filters" data-text="filters ">Filters</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/areas" data-text="areas ">Areas</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/advanced/app-parts" data-text="application parts ">Application parts</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/advanced/custom-model-binding" data-text="custom model binding ">Custom Model Binding</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/advanced/custom-formatters" data-text="custom formatters ">Custom formatters</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/models/formatting" data-text="formatting response data ">Formatting response data</a></li></ul></li><li aria-expanded="true" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/" data-text="tutorials ">Tutorials</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/" data-text="create a razor pages web app ">Create a Razor Pages web app</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start" data-text="getting started with razor pages ">Getting started with Razor Pages</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/model" data-text="adding a model ">Adding a model</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/page" data-text="scaffolded razor pages ">Scaffolded Razor Pages</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/sql" data-text="sql server localdb ">SQL Server LocalDB</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/da1" data-text="updating the pages ">Updating the pages</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/search" data-text="adding search ">Adding search</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/new-field" data-text="adding a new field ">Adding a new field</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/validation" data-text="adding validation ">Adding validation</a></li></ul></li><li aria-expanded="true" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/" data-text="create an mvc web app on windows ">Create an MVC web app on Windows</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc" data-text="getting started ">Getting started</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller" data-text="adding a controller ">Adding a controller</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-view" data-text="adding a view ">Adding a view</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/adding-model" data-text="adding a model ">Adding a model</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/working-with-sql" data-text="working with sql server localdb ">Working with SQL Server LocalDB</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/controller-methods-views" data-text="controller methods and views ">Controller methods and views</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/search" data-text="adding search ">Adding search</a></li><li class="selectedHolder"><a tabindex="0" class="selected" data-showme="true" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field" data-text="adding a new field ">Adding a New Field</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/validation" data-text="adding validation ">Adding Validation</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/details" data-text="examining the details and delete methods ">Examining the Details and Delete methods</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/" data-text="create an mvc web app on a mac ">Create an MVC web app on a Mac</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/start-mvc" data-text="getting started ">Getting started</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/adding-controller" data-text="adding a controller ">Adding a controller</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/adding-view" data-text="adding a view ">Adding a view</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/adding-model" data-text="adding a model ">Adding a model</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/working-with-sql" data-text="working with sqlite ">Working with SQLite</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/controller-methods-views" data-text="controller methods and views ">Controller methods and views</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/search" data-text="adding search ">Adding search</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/new-field" data-text="adding a new field ">Adding a New Field</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-mac/validation" data-text="adding validation ">Adding Validation</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/details" data-text="examining the details and delete methods ">Examining the Details and Delete methods</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/" data-text="create an mvc web app with vs code ">Create an MVC web app with VS Code</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc" data-text="getting started ">Getting started</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-controller" data-text="adding a controller ">Adding a controller</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-view" data-text="adding a view ">Adding a view</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-model" data-text="adding a model ">Adding a model</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/working-with-sql" data-text="working with sqlite ">Working with SQLite</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/controller-methods-views" data-text="controller methods and views ">Controller methods and views</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/search" data-text="adding search ">Adding search</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/new-field" data-text="adding a new field ">Adding a New Field</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app-xplat/validation" data-text="adding validation ">Adding Validation</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/details" data-text="examining the details and delete methods ">Examining the Details and Delete methods</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/" data-text="data access - working with ef core ">Data access - working with EF Core</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/intro" data-text="getting started ">Getting started</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/crud" data-text="create, read, update, and delete operations ">Create, Read, Update, and Delete operations</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/sort-filter-page" data-text="sorting, filtering, paging, and grouping ">Sorting, filtering, paging, and grouping</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/migrations" data-text="migrations ">Migrations</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/complex-data-model" data-text="creating a complex data model ">Creating a complex data model</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/read-related-data" data-text="reading related data ">Reading related data</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/update-related-data" data-text="updating related data ">Updating related data</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/concurrency" data-text="handling concurrency conflicts ">Handling concurrency conflicts</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/inheritance" data-text="inheritance ">Inheritance</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/advanced" data-text="advanced topics ">Advanced topics</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend" data-text="creating backend services for mobile apps ">Creating backend services for mobile apps</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/web-api/" data-text="building web apis ">Building Web APIs</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-web-api-mac" data-text="create a web api ">Create a Web API</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger" data-text="asp.net web api help pages using swagger ">ASP.​NET Web API Help Pages using Swagger</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend" data-text="creating backend services for native mobile applications ">Creating backend services for native mobile applications</a></li></ul></li></ul></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/testing/" data-text="testing and debugging ">Testing and debugging</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test" data-text="unit testing ">Unit testing</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/testing/integration-testing" data-text="integration testing ">Integration testing</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/testing" data-text="testing controllers ">Testing controllers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/visualstudio/debugger/remote-debugging-azure" data-text="remote debugging ">Remote debugging</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/" data-text="working with data ">Working with Data</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/ef-mvc/" data-text="getting started with asp.net core and entity framework core using visual studio ">Getting started with ASP.​NET Core and Entity Framework Core using Visual Studio</a></li><li><a tabindex="0" href="https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db" data-text="asp.net core with ef core - new database ">ASP.​NET Core with EF Core - new database</a></li><li><a tabindex="0" href="https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db" data-text="asp.net core with ef core - existing database ">ASP.​NET Core with EF Core - existing database</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/entity-framework-6" data-text="getting started with asp.net core and entity framework 6 ">Getting Started with ASP.​NET Core and Entity Framework 6</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/data/azure-storage/" data-text="azure storage ">Azure Storage</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage" data-text="adding azure storage by using visual studio connected services ">Adding Azure Storage by using Visual Studio Connected Services</a></li><li><a tabindex="0" href="https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs" data-text="get started with blob storage and visual studio connected services ">Get started with Blob storage and Visual Studio Connected Services</a></li><li><a tabindex="0" href="https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues" data-text="get started with queue storage and visual studio connected services ">Get Started with Queue Storage and Visual Studio Connected Services</a></li><li><a tabindex="0" href="https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables" data-text="get started with table storage and visual studio connected services ">Get Started with Table Storage and Visual Studio Connected Services</a></li></ul></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/" data-text="client-side development ">Client-Side Development</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/using-gulp" data-text="using gulp ">Using Gulp</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/using-grunt" data-text="using grunt ">Using Grunt</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/bower" data-text="manage client-side packages with bower ">Manage client-side packages with Bower</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/bootstrap" data-text="building beautiful, responsive sites with bootstrap ">Building beautiful, responsive sites with Bootstrap</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/knockout" data-text="knockout.js mvvm framework ">Knockout.​js MVVM Framework</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/angular" data-text="using angularjs for single page apps (xref:client-side/spas) ">Using AngularJS for Single Page Apps (xref:client-side/SPAs)</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/spa-services" data-text="using javascriptservices for single page apps (xref:client-side/spas) ">Using Java​Script​Services for Single Page Apps (xref:client-side/SPAs)</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/less-sass-fa" data-text="styling applications with less, sass, and font awesome ">Styling applications with Less, Sass, and Font Awesome</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/bundling-and-minification" data-text="bundling and minification ">Bundling and minification</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/yeoman" data-text="building projects with yeoman ">Building Projects with Yeoman</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/client-side/using-browserlink" data-text="using browser link ">Using Browser Link</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mobile/" data-text="mobile ">Mobile</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/mobile/native-mobile-backend" data-text="creating backend services for native mobile applications ">Creating Backend Services for Native Mobile Applications</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/" data-text="hosting and deployment ">Hosting and deployment</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/iis" data-text="host on windows with iis ">Host on Windows with IIS</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/hosting/aspnet-core-module" data-text="asp.net core module configuration reference ">ASP.​NET Core Module Configuration Reference</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/hosting/iis-modules" data-text="iis modules with asp.net core ">IIS Modules with ASP.​NET Core</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/hosting/windows-service" data-text="host in a windows service ">Host in a Windows service</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/linuxproduction" data-text="host on linux with nginx ">Host on Linux with Nginx</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/apache-proxy" data-text="host on linux with apache ">Host on Linux with Apache</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/docker" data-text="host in docker ">Host in Docker</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/dotnet/articles/core/docker/building-net-docker-images" data-text="building docker images ">Building Docker Images</a></li><li><a tabindex="0" href="https://docs.microsoft.com/dotnet/articles/core/docker/visual-studio-tools-for-docker" data-text="visual studio tools for docker ">Visual Studio Tools for Docker</a></li><li><a tabindex="0" href="https://azure.microsoft.com/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker" data-text="publish to a docker image ">Publish to a Docker Image</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/publish-to-azure-webapp-using-vs" data-text="publish to azure with visual studio ">Publish to Azure with Visual Studio</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/azure-continuous-deployment" data-text="continuous deployment to azure with visual studio and git ">Continuous deployment to Azure with Visual Studio and Git</a></li><li><a tabindex="0" href="https://www.visualstudio.com/en-us/docs/build/aspnet/core/quick-to-azure" data-text="continuous deployment to azure with vsts ">Continuous deployment to Azure with VSTS</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/publishing/web-publishing-vs" data-text="publish profiles in visual studio ">Publish profiles in Visual Studio</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/hosting/directory-structure" data-text="directory structure ">Directory structure</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/" data-text="security ">Security</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/" data-text="authentication ">Authentication</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/community" data-text="community oss authentication options ">Community OSS authentication options</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity" data-text="introduction to identity ">Introduction to Identity</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-configuration" data-text="configure identity ">Configure Identity</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/windowsauth" data-text="configure windows authentication ">Configure Windows Authentication</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-primary-key-configuration" data-text="configure primary key type for identity ">Configure primary key type for Identity</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-custom-storage-providers" data-text="custom storage providers for asp.net core identity ">Custom storage providers for ASP.​NET Core Identity</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/" data-text="enabling authentication using facebook, google and other external providers ">Enabling authentication using Facebook, Google and other external providers</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/facebook-logins" data-text="facebook authentication ">Facebook authentication</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/twitter-logins" data-text="twitter authentication ">Twitter authentication</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/google-logins" data-text="google authentication ">Google authentication</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/microsoft-logins" data-text="microsoft authentication ">Microsoft authentication</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/social/other-logins" data-text="other authentication providers ">Other authentication providers</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/accconfirm" data-text="account confirmation and password recovery ">Account Confirmation and Password Recovery</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-enable-qrcodes" data-text="enabling qr code generation in asp.net identity ">Enabling QR Code generation in ASP.​NET identity</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/2fa" data-text="two-factor authentication with sms ">Two-factor authentication with SMS</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/cookie" data-text="using cookie authentication without asp.net core identity ">Using Cookie Authentication without ASP.​NET Core Identity</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authentication/azure-active-directory/" data-text="azure active directory ">Azure Active Directory</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore" data-text="integrating azure ad into an asp.net core web app ">Integrating Azure AD Into an ASP.​NET Core Web App</a></li><li><a tabindex="0" href="https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore" data-text="calling a asp.net core web api from a wpf application using azure ad ">Calling a ASP.​NET Core Web API From a WPF Application Using Azure AD</a></li><li><a tabindex="0" href="https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore" data-text="calling a web api in an asp.net core web application using azure ad ">Calling a Web API in an ASP.​NET Core Web Application Using Azure AD</a></li></ul></li><li><a tabindex="0" href="https://identityserver4.readthedocs.io/" data-text="securing asp.net core apps with identityserver4 ">Securing ASP.​NET Core apps with Identity​Server4</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/" data-text="authorization ">Authorization</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/introduction" data-text="introduction ">Introduction</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/secure-data" data-text="create an app with user data protected by authorization ">Create an app with user data protected by authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/simple" data-text="simple authorization ">Simple Authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/roles" data-text="role based authorization ">Role based Authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/claims" data-text="claims-based authorization ">Claims-Based Authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/policies" data-text="custom policy-based authorization ">Custom Policy-Based Authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/dependencyinjection" data-text="dependency injection in requirement handlers ">Dependency Injection in requirement handlers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/resourcebased" data-text="resource based authorization ">Resource Based Authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/views" data-text="view based authorization ">View Based Authorization</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/authorization/limitingidentitybyscheme" data-text="limiting identity by scheme ">Limiting identity by scheme</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/" data-text="data protection ">Data Protection</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/introduction" data-text="introduction to data protection ">Introduction to Data Protection</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/using-data-protection" data-text="getting started with the data protection apis ">Getting Started with the Data Protection APIs</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/" data-text="consumer apis ">Consumer APIs</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/overview" data-text="consumer apis overview ">Consumer APIs Overview</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/purpose-strings" data-text="purpose strings ">Purpose Strings</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/purpose-strings-multitenancy" data-text="purpose hierarchy and multi-tenancy ">Purpose hierarchy and multi-tenancy</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing" data-text="password hashing ">Password Hashing</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/limited-lifetime-payloads" data-text="limiting the lifetime of protected payloads ">Limiting the lifetime of protected payloads</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/consumer-apis/dangerous-unprotect" data-text="unprotecting payloads whose keys have been revoked ">Unprotecting payloads whose keys have been revoked</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/" data-text="configuration ">Configuration</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/overview" data-text="configuring data protection ">Configuring Data Protection</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/default-settings" data-text="default settings ">Default Settings</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/machine-wide-policy" data-text="machine wide policy ">Machine Wide Policy</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/configuration/non-di-scenarios" data-text="non di aware scenarios ">Non DI Aware Scenarios</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/" data-text="extensibility apis ">Extensibility APIs</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/core-crypto" data-text="core cryptography extensibility ">Core cryptography extensibility</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/key-management" data-text="key management extensibility ">Key management extensibility</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/extensibility/misc-apis" data-text="miscellaneous apis ">Miscellaneous APIs</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/" data-text="implementation ">Implementation</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/authenticated-encryption-details" data-text="authenticated encryption details. ">Authenticated encryption details.</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/subkeyderivation" data-text="subkey derivation and authenticated encryption ">Subkey Derivation and Authenticated Encryption</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/context-headers" data-text="context headers ">Context headers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-management" data-text="key management ">Key Management</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-storage-providers" data-text="key storage providers ">Key Storage Providers</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-encryption-at-rest" data-text="key encryption at rest ">Key Encryption At Rest</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-immutability" data-text="key immutability and changing settings ">Key Immutability and Changing Settings</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-storage-format" data-text="key storage format ">Key Storage Format</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/implementation/key-storage-ephemeral" data-text="ephemeral data protection providers ">Ephemeral data protection providers</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/compatibility/" data-text="compatibility ">Compatibility</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/compatibility/cookie-sharing" data-text="sharing cookies between applications ">Sharing cookies between applications</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/data-protection/compatibility/replacing-machinekey" data-text="replacing &amp;lt;machinekey&amp;gt; in asp.net ">Replacing &lt;machine​Key&gt; in ASP.​NET</a></li></ul></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/enforcing-ssl" data-text="enforcing ssl ">Enforcing SSL</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/https" data-text="setting up https for development ">Setting up HTTPS for development</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets" data-text="safe storage of app secrets during development ">Safe storage of app secrets during development</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/key-vault-configuration" data-text="azure key vault configuration provider ">Azure Key Vault configuration provider</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/anti-request-forgery" data-text="anti-request forgery ">Anti-Request Forgery</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/preventing-open-redirects" data-text="preventing open redirect attacks ">Preventing Open Redirect Attacks</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/cross-site-scripting" data-text="preventing cross-site scripting ">Preventing Cross-Site Scripting</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/security/cors" data-text="enabling cross-origin requests (xref:security/cors) ">Enabling Cross-Origin Requests (xref:security/CORS)</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/" data-text="performance ">Performance</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/caching/" data-text="caching ">Caching</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/caching/memory" data-text="in-memory caching ">In-Memory Caching</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/caching/distributed" data-text="working with a distributed cache ">Working with a Distributed Cache</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/caching/response" data-text="response caching ">Response Caching</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/caching/middleware" data-text="response caching middleware ">Response Caching Middleware</a></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/performance/response-compression" data-text="response compression middleware ">Response Compression Middleware</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/" data-text="migration ">Migration</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/mvc" data-text="asp.net to asp.net core 1.x ">ASP.​NET to ASP.​NET Core 1.x</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/configuration" data-text="configuration ">Configuration</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/identity" data-text="authentication and identity ">Authentication and Identity</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/webapi" data-text="web api ">Web API</a></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/http-modules" data-text="http modules to middleware ">HTTP Modules to Middleware</a></li></ul></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/" data-text="asp.net core 1.x to 2.0 ">ASP.​NET Core 1.x to 2.0</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/migration/1x-to-2x/identity-2x" data-text="authentication and identity ">Authentication and Identity</a></li></ul></li></ul></li><li><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/api/" data-text="api reference ">API Reference</a></li><li aria-expanded="false" tabindex="0" aria-treeitem="true" onclick="event.stopPropagation();msDocs.functions.toggleAriaExpanded(this)" class="noSubs"><a tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/aspnetcore-2.0" data-text="2.0 release notes ">2.0 release notes</a><ul aria-treegrid="true" onclick="msDocs.functions.stopSomePropagation(event, &quot;top&quot;)"><li><a onclick="msDocs.functions.stopSomePropagation(event, &quot;left&quot;)" tabindex="0" href="https://docs.microsoft.com/en-us/aspnet/core/aspnetcore-1.1" data-text="1.1 release notes ">1.1 Release notes</a></li><li><a tabindex="0" href="https://github.com/aspnet/home/releases" data-text="earlier release notes ">Earlier release notes</a></li><li><a tabindex="0" href="https://docs.microsoft.com/dotnet/articles/project-json" data-text="vs 2015/project.json docs ">VS 2015/project.​json docs</a></li></ul></li><li><a tabindex="0" href="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md" data-text="contribute ">Contribute</a></li></ul></nav>
+				<div class="pdfDownloadHolder" style="display: block;"><a href="https://docs.microsoft.com/pdfstore/en-us/MSDN.aspnet-core-conceptual/live.pdf" ms.cmpnm="downloadPdf" data-bi-name="downloadPdf">Download PDF</a></div>
+			</div>
+			<div class="tocSpace"></div>
+		</div>
+
+		<div id="menu-nav" class="dropdown-container" lang="en-us" dir="ltr">
+			<div class="dropdown dropdown-full mobilenavi">
+					<select><option value="/en-us/aspnet/core/">Introduction</option><option value="/en-us/aspnet/core/getting-started">Getting Started</option><option value="/en-us/aspnet/core/mvc/razor-pages/">&nbsp;&nbsp;&nbsp;Create a Web app</option><option value="/en-us/aspnet/core/tutorials/first-web-api">&nbsp;&nbsp;&nbsp;Create a Web API</option><option value="/en-us/aspnet/core/tutorials/">Tutorials</option><option value="/en-us/aspnet/core/fundamentals/">Fundamentals</option><option value="/en-us/aspnet/core/fundamentals/startup">&nbsp;&nbsp;&nbsp;Application Startup</option><option value="/en-us/aspnet/core/fundamentals/middleware">&nbsp;&nbsp;&nbsp;Middleware</option><option value="/en-us/aspnet/core/fundamentals/static-files">&nbsp;&nbsp;&nbsp;Working with Static Files</option><option value="/en-us/aspnet/core/fundamentals/routing">&nbsp;&nbsp;&nbsp;Routing</option><option value="/en-us/aspnet/core/fundamentals/url-rewriting">&nbsp;&nbsp;&nbsp;URL Rewriting Middleware</option><option value="/en-us/aspnet/core/fundamentals/error-handling">&nbsp;&nbsp;&nbsp;Error Handling</option><option value="/en-us/aspnet/core/fundamentals/websockets">&nbsp;&nbsp;&nbsp;WebSockets</option><option value="/en-us/aspnet/core/fundamentals/localization">&nbsp;&nbsp;&nbsp;Globalization and localization</option><option value="/en-us/aspnet/core/fundamentals/configuration">&nbsp;&nbsp;&nbsp;Configuration</option><option value="/en-us/aspnet/core/fundamentals/logging">&nbsp;&nbsp;&nbsp;Logging</option><option value="/en-us/aspnet/core/fundamentals/file-providers">&nbsp;&nbsp;&nbsp;File Providers</option><option value="/en-us/aspnet/core/fundamentals/dependency-injection">&nbsp;&nbsp;&nbsp;Dependency Injection</option><option value="/en-us/aspnet/core/fundamentals/environments">&nbsp;&nbsp;&nbsp;Working with Multiple Environments</option><option value="/en-us/aspnet/core/fundamentals/hosting">&nbsp;&nbsp;&nbsp;Hosting</option><option value="/en-us/aspnet/core/fundamentals/app-state">&nbsp;&nbsp;&nbsp;Session and application state</option><option value="/en-us/aspnet/core/fundamentals/servers/">&nbsp;&nbsp;&nbsp;Servers</option><option value="/en-us/aspnet/core/fundamentals/servers/kestrel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kestrel</option><option value="/en-us/aspnet/core/fundamentals/servers/aspnet-core-module">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASP.NET Core Module</option><option value="/en-us/aspnet/core/fundamentals/servers/weblistener">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;WebListener</option><option value="/en-us/aspnet/core/fundamentals/servers/httpsys">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HttpSys</option><option value="/en-us/aspnet/core/fundamentals/request-features">&nbsp;&nbsp;&nbsp;Request Features</option><option value="/en-us/aspnet/core/fundamentals/owin">&nbsp;&nbsp;&nbsp;Open Web Interface for .NET (OWIN)</option><option value="/en-us/aspnet/core/choose-aspnet-framework">&nbsp;&nbsp;&nbsp;Choose between ASP.NET Core and ASP.NET</option><option value="https://docs.microsoft.com/dotnet/articles/standard/choosing-core-framework-server">&nbsp;&nbsp;&nbsp;Choose between .NET Core and .NET Framework runtime</option><option value="/en-us/aspnet/core/fundamentals/metapackage">&nbsp;&nbsp;&nbsp;Microsoft.AspNetCore.All metapackage</option><option value="/en-us/aspnet/core/mvc/overview">MVC</option><option value="/en-us/aspnet/core/mvc/razor-pages/">&nbsp;&nbsp;&nbsp;Razor Pages</option><option value="/en-us/aspnet/core/mvc/views/razor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Razor syntax</option><option value="/en-us/aspnet/core/mvc/models/model-binding">&nbsp;&nbsp;&nbsp;Model Binding</option><option value="/en-us/aspnet/core/mvc/models/validation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model validation</option><option value="/en-us/aspnet/core/mvc/views/overview">&nbsp;&nbsp;&nbsp;Views</option><option value="/en-us/aspnet/core/mvc/views/razor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Razor syntax</option><option value="/en-us/aspnet/core/mvc/views/view-compilation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View compilation</option><option value="/en-us/aspnet/core/mvc/views/layout">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Layout</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/intro">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tag helpers</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/authoring">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authoring tag helpers</option><option value="/en-us/aspnet/core/mvc/views/working-with-forms">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using tag helpers in forms</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/built-in/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Built-in tag helpers</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/built-in/anchortaghelper">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Anchor tag helper</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/built-in/cachetaghelper">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Cache tag helper</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/built-in/distributedcachetaghelper">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Distributed Cache tag helper</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/built-in/environmenttaghelper">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environment tag helper</option><option value="/en-us/aspnet/core/mvc/views/tag-helpers/built-in/imagetaghelper">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Image tag helper</option><option value="/en-us/aspnet/core/mvc/views/partial">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Partial views</option><option value="/en-us/aspnet/core/mvc/views/dependency-injection">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dependency injection into views</option><option value="/en-us/aspnet/core/mvc/views/view-components">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View components</option><option value="/en-us/aspnet/core/mvc/controllers/actions">&nbsp;&nbsp;&nbsp;Controllers</option><option value="/en-us/aspnet/core/mvc/controllers/routing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Routing to controller actions</option><option value="/en-us/aspnet/core/mvc/models/file-uploads">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;File uploads</option><option value="/en-us/aspnet/core/mvc/controllers/dependency-injection">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dependency injection into controllers</option><option value="/en-us/aspnet/core/mvc/controllers/testing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Testing controllers</option><option value="/en-us/aspnet/core/mvc/advanced/">&nbsp;&nbsp;&nbsp;Advanced</option><option value="/en-us/aspnet/core/mvc/controllers/application-model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Working with the Application Model</option><option value="/en-us/aspnet/core/mvc/controllers/filters">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Filters</option><option value="/en-us/aspnet/core/mvc/controllers/areas">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Areas</option><option value="/en-us/aspnet/core/mvc/advanced/app-parts">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Application parts</option><option value="/en-us/aspnet/core/mvc/advanced/custom-model-binding">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom Model Binding</option><option value="/en-us/aspnet/core/mvc/advanced/custom-formatters">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom formatters</option><option value="/en-us/aspnet/core/mvc/models/formatting">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Formatting response data</option><option value="/en-us/aspnet/core/tutorials/">&nbsp;&nbsp;&nbsp;Tutorials</option><option value="/en-us/aspnet/core/tutorials/razor-pages/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a Razor Pages web app</option><option value="/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting started with Razor Pages</option><option value="/en-us/aspnet/core/tutorials/razor-pages/model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a model</option><option value="/en-us/aspnet/core/tutorials/razor-pages/page">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Scaffolded Razor Pages</option><option value="/en-us/aspnet/core/tutorials/razor-pages/sql">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SQL Server LocalDB</option><option value="/en-us/aspnet/core/tutorials/razor-pages/da1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Updating the pages</option><option value="/en-us/aspnet/core/tutorials/razor-pages/search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding search</option><option value="/en-us/aspnet/core/tutorials/razor-pages/new-field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a new field</option><option value="/en-us/aspnet/core/tutorials/razor-pages/validation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding validation</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an MVC web app on Windows</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/start-mvc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting started</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/adding-controller">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a controller</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/adding-view">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a view</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/adding-model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a model</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/working-with-sql">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Working with SQL Server LocalDB</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/controller-methods-views">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controller methods and views</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding search</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/new-field" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a New Field</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/validation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding Validation</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/details">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Examining the Details and Delete methods</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an MVC web app on a Mac</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/start-mvc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting started</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/adding-controller">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a controller</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/adding-view">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a view</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/adding-model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a model</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/working-with-sql">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Working with SQLite</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/controller-methods-views">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controller methods and views</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding search</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/new-field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a New Field</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-mac/validation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding Validation</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/details">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Examining the Details and Delete methods</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an MVC web app with VS Code</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/start-mvc">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting started</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-controller">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a controller</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-view">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a view</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/adding-model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a model</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/working-with-sql">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Working with SQLite</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/controller-methods-views">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Controller methods and views</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/search">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding search</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/new-field">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding a New Field</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app-xplat/validation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding Validation</option><option value="/en-us/aspnet/core/tutorials/first-mvc-app/details">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Examining the Details and Delete methods</option><option value="/en-us/aspnet/core/data/ef-mvc/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data access - working with EF Core</option><option value="/en-us/aspnet/core/data/ef-mvc/intro">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting started</option><option value="/en-us/aspnet/core/data/ef-mvc/crud">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create, Read, Update, and Delete operations</option><option value="/en-us/aspnet/core/data/ef-mvc/sort-filter-page">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sorting, filtering, paging, and grouping</option><option value="/en-us/aspnet/core/data/ef-mvc/migrations">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Migrations</option><option value="/en-us/aspnet/core/data/ef-mvc/complex-data-model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creating a complex data model</option><option value="/en-us/aspnet/core/data/ef-mvc/read-related-data">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Reading related data</option><option value="/en-us/aspnet/core/data/ef-mvc/update-related-data">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Updating related data</option><option value="/en-us/aspnet/core/data/ef-mvc/concurrency">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Handling concurrency conflicts</option><option value="/en-us/aspnet/core/data/ef-mvc/inheritance">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Inheritance</option><option value="/en-us/aspnet/core/data/ef-mvc/advanced">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Advanced topics</option><option value="/en-us/aspnet/core/mobile/native-mobile-backend">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creating backend services for mobile apps</option><option value="/en-us/aspnet/core/mvc/web-api/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building Web APIs</option><option value="/en-us/aspnet/core/tutorials/first-web-api-mac">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create a Web API</option><option value="/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASP.NET Web API Help Pages using Swagger</option><option value="/en-us/aspnet/core/mobile/native-mobile-backend">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Creating backend services for native mobile applications</option><option value="/en-us/aspnet/core/testing/">Testing and debugging</option><option value="https://docs.microsoft.com/dotnet/articles/core/testing/unit-testing-with-dotnet-test">&nbsp;&nbsp;&nbsp;Unit testing</option><option value="/en-us/aspnet/core/testing/integration-testing">&nbsp;&nbsp;&nbsp;Integration testing</option><option value="/en-us/aspnet/core/mvc/controllers/testing">&nbsp;&nbsp;&nbsp;Testing controllers</option><option value="https://docs.microsoft.com/visualstudio/debugger/remote-debugging-azure">&nbsp;&nbsp;&nbsp;Remote debugging</option><option value="/en-us/aspnet/core/data/">Working with Data</option><option value="/en-us/aspnet/core/data/ef-mvc/">&nbsp;&nbsp;&nbsp;Getting started with ASP.NET Core and Entity Framework Core using Visual Studio</option><option value="https://docs.microsoft.com/ef/core/get-started/aspnetcore/new-db">&nbsp;&nbsp;&nbsp;ASP.NET Core with EF Core - new database</option><option value="https://docs.microsoft.com/ef/core/get-started/aspnetcore/existing-db">&nbsp;&nbsp;&nbsp;ASP.NET Core with EF Core - existing database</option><option value="/en-us/aspnet/core/data/entity-framework-6">&nbsp;&nbsp;&nbsp;Getting Started with ASP.NET Core and Entity Framework 6</option><option value="/en-us/aspnet/core/data/azure-storage/">&nbsp;&nbsp;&nbsp;Azure Storage</option><option value="https://azure.microsoft.com/documentation/articles/vs-azure-tools-connected-services-storage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Adding Azure Storage by using Visual Studio Connected Services</option><option value="https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-blobs">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get started with Blob storage and Visual Studio Connected Services</option><option value="https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-queues">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Started with Queue Storage and Visual Studio Connected Services</option><option value="https://azure.microsoft.com/documentation/articles/vs-storage-aspnet5-getting-started-tables">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Get Started with Table Storage and Visual Studio Connected Services</option><option value="/en-us/aspnet/core/client-side/">Client-Side Development</option><option value="/en-us/aspnet/core/client-side/using-gulp">&nbsp;&nbsp;&nbsp;Using Gulp</option><option value="/en-us/aspnet/core/client-side/using-grunt">&nbsp;&nbsp;&nbsp;Using Grunt</option><option value="/en-us/aspnet/core/client-side/bower">&nbsp;&nbsp;&nbsp;Manage client-side packages with Bower</option><option value="/en-us/aspnet/core/client-side/bootstrap">&nbsp;&nbsp;&nbsp;Building beautiful, responsive sites with Bootstrap</option><option value="/en-us/aspnet/core/client-side/knockout">&nbsp;&nbsp;&nbsp;Knockout.js MVVM Framework</option><option value="/en-us/aspnet/core/client-side/angular">&nbsp;&nbsp;&nbsp;Using AngularJS for Single Page Apps (xref:client-side/SPAs)</option><option value="/en-us/aspnet/core/client-side/spa-services">&nbsp;&nbsp;&nbsp;Using JavaScriptServices for Single Page Apps (xref:client-side/SPAs)</option><option value="/en-us/aspnet/core/client-side/less-sass-fa">&nbsp;&nbsp;&nbsp;Styling applications with Less, Sass, and Font Awesome</option><option value="/en-us/aspnet/core/client-side/bundling-and-minification">&nbsp;&nbsp;&nbsp;Bundling and minification</option><option value="/en-us/aspnet/core/client-side/yeoman">&nbsp;&nbsp;&nbsp;Building Projects with Yeoman</option><option value="/en-us/aspnet/core/client-side/using-browserlink">&nbsp;&nbsp;&nbsp;Using Browser Link</option><option value="/en-us/aspnet/core/mobile/">Mobile</option><option value="/en-us/aspnet/core/mobile/native-mobile-backend">Creating Backend Services for Native Mobile Applications</option><option value="/en-us/aspnet/core/publishing/">Hosting and deployment</option><option value="/en-us/aspnet/core/publishing/iis">&nbsp;&nbsp;&nbsp;Host on Windows with IIS</option><option value="/en-us/aspnet/core/hosting/aspnet-core-module">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ASP.NET Core Module Configuration Reference</option><option value="/en-us/aspnet/core/hosting/iis-modules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;IIS Modules with ASP.NET Core</option><option value="/en-us/aspnet/core/hosting/windows-service">&nbsp;&nbsp;&nbsp;Host in a Windows service</option><option value="/en-us/aspnet/core/publishing/linuxproduction">&nbsp;&nbsp;&nbsp;Host on Linux with Nginx</option><option value="/en-us/aspnet/core/publishing/apache-proxy">&nbsp;&nbsp;&nbsp;Host on Linux with Apache</option><option value="/en-us/aspnet/core/publishing/docker">&nbsp;&nbsp;&nbsp;Host in Docker</option><option value="https://docs.microsoft.com/dotnet/articles/core/docker/building-net-docker-images">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Building Docker Images</option><option value="https://docs.microsoft.com/dotnet/articles/core/docker/visual-studio-tools-for-docker">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visual Studio Tools for Docker</option><option value="https://azure.microsoft.com/documentation/articles/vs-azure-tools-docker-hosting-web-apps-in-docker">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Publish to a Docker Image</option><option value="/en-us/aspnet/core/tutorials/publish-to-azure-webapp-using-vs">&nbsp;&nbsp;&nbsp;Publish to Azure with Visual Studio</option><option value="/en-us/aspnet/core/publishing/azure-continuous-deployment">&nbsp;&nbsp;&nbsp;Continuous deployment to Azure with Visual Studio and Git</option><option value="https://www.visualstudio.com/en-us/docs/build/aspnet/core/quick-to-azure">&nbsp;&nbsp;&nbsp;Continuous deployment to Azure with VSTS</option><option value="/en-us/aspnet/core/publishing/web-publishing-vs">&nbsp;&nbsp;&nbsp;Publish profiles in Visual Studio</option><option value="/en-us/aspnet/core/hosting/directory-structure">&nbsp;&nbsp;&nbsp;Directory structure</option><option value="/en-us/aspnet/core/security/">Security</option><option value="/en-us/aspnet/core/security/authentication/">&nbsp;&nbsp;&nbsp;Authentication</option><option value="/en-us/aspnet/core/security/authentication/community">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Community OSS authentication options</option><option value="/en-us/aspnet/core/security/authentication/identity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to Identity</option><option value="/en-us/aspnet/core/security/authentication/identity-configuration">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Identity</option><option value="/en-us/aspnet/core/security/authentication/windowsauth">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure Windows Authentication</option><option value="/en-us/aspnet/core/security/authentication/identity-primary-key-configuration">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configure primary key type for Identity</option><option value="/en-us/aspnet/core/security/authentication/identity-custom-storage-providers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom storage providers for ASP.NET Core Identity</option><option value="/en-us/aspnet/core/security/authentication/social/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enabling authentication using Facebook, Google and other external providers</option><option value="/en-us/aspnet/core/security/authentication/social/facebook-logins">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Facebook authentication</option><option value="/en-us/aspnet/core/security/authentication/social/twitter-logins">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Twitter authentication</option><option value="/en-us/aspnet/core/security/authentication/social/google-logins">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Google authentication</option><option value="/en-us/aspnet/core/security/authentication/social/microsoft-logins">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Microsoft authentication</option><option value="/en-us/aspnet/core/security/authentication/social/other-logins">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Other authentication providers</option><option value="/en-us/aspnet/core/security/authentication/accconfirm">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Account Confirmation and Password Recovery</option><option value="/en-us/aspnet/core/security/authentication/identity-enable-qrcodes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Enabling QR Code generation in ASP.NET identity</option><option value="/en-us/aspnet/core/security/authentication/2fa">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Two-factor authentication with SMS</option><option value="/en-us/aspnet/core/security/authentication/cookie">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Using Cookie Authentication without ASP.NET Core Identity</option><option value="/en-us/aspnet/core/security/authentication/azure-active-directory/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Azure Active Directory</option><option value="https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-openidconnect-aspnetcore">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Integrating Azure AD Into an ASP.NET Core Web App</option><option value="https://azure.microsoft.com/documentation/samples/active-directory-dotnet-native-aspnetcore">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calling a ASP.NET Core Web API From a WPF Application Using Azure AD</option><option value="https://azure.microsoft.com/documentation/samples/active-directory-dotnet-webapp-webapi-openidconnect-aspnetcore">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Calling a Web API in an ASP.NET Core Web Application Using Azure AD</option><option value="https://identityserver4.readthedocs.io">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Securing ASP.NET Core apps with IdentityServer4</option><option value="/en-us/aspnet/core/security/authorization/">&nbsp;&nbsp;&nbsp;Authorization</option><option value="/en-us/aspnet/core/security/authorization/introduction">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction</option><option value="/en-us/aspnet/core/security/authorization/secure-data">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Create an app with user data protected by authorization</option><option value="/en-us/aspnet/core/security/authorization/simple">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Simple Authorization</option><option value="/en-us/aspnet/core/security/authorization/roles">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Role based Authorization</option><option value="/en-us/aspnet/core/security/authorization/claims">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Claims-Based Authorization</option><option value="/en-us/aspnet/core/security/authorization/policies">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Custom Policy-Based Authorization</option><option value="/en-us/aspnet/core/security/authorization/dependencyinjection">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dependency Injection in requirement handlers</option><option value="/en-us/aspnet/core/security/authorization/resourcebased">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resource Based Authorization</option><option value="/en-us/aspnet/core/security/authorization/views">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;View Based Authorization</option><option value="/en-us/aspnet/core/security/authorization/limitingidentitybyscheme">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limiting identity by scheme</option><option value="/en-us/aspnet/core/security/data-protection/">&nbsp;&nbsp;&nbsp;Data Protection</option><option value="/en-us/aspnet/core/security/data-protection/introduction">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Introduction to Data Protection</option><option value="/en-us/aspnet/core/security/data-protection/using-data-protection">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Getting Started with the Data Protection APIs</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consumer APIs</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/overview">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consumer APIs Overview</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/purpose-strings">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Purpose Strings</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/purpose-strings-multitenancy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Purpose hierarchy and multi-tenancy</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/password-hashing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Password Hashing</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/limited-lifetime-payloads">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Limiting the lifetime of protected payloads</option><option value="/en-us/aspnet/core/security/data-protection/consumer-apis/dangerous-unprotect">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unprotecting payloads whose keys have been revoked</option><option value="/en-us/aspnet/core/security/data-protection/configuration/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configuration</option><option value="/en-us/aspnet/core/security/data-protection/configuration/overview">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configuring Data Protection</option><option value="/en-us/aspnet/core/security/data-protection/configuration/default-settings">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Default Settings</option><option value="/en-us/aspnet/core/security/data-protection/configuration/machine-wide-policy">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Machine Wide Policy</option><option value="/en-us/aspnet/core/security/data-protection/configuration/non-di-scenarios">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Non DI Aware Scenarios</option><option value="/en-us/aspnet/core/security/data-protection/extensibility/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Extensibility APIs</option><option value="/en-us/aspnet/core/security/data-protection/extensibility/core-crypto">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Core cryptography extensibility</option><option value="/en-us/aspnet/core/security/data-protection/extensibility/key-management">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key management extensibility</option><option value="/en-us/aspnet/core/security/data-protection/extensibility/misc-apis">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Miscellaneous APIs</option><option value="/en-us/aspnet/core/security/data-protection/implementation/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Implementation</option><option value="/en-us/aspnet/core/security/data-protection/implementation/authenticated-encryption-details">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authenticated encryption details.</option><option value="/en-us/aspnet/core/security/data-protection/implementation/subkeyderivation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Subkey Derivation and Authenticated Encryption</option><option value="/en-us/aspnet/core/security/data-protection/implementation/context-headers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Context headers</option><option value="/en-us/aspnet/core/security/data-protection/implementation/key-management">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Management</option><option value="/en-us/aspnet/core/security/data-protection/implementation/key-storage-providers">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Storage Providers</option><option value="/en-us/aspnet/core/security/data-protection/implementation/key-encryption-at-rest">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Encryption At Rest</option><option value="/en-us/aspnet/core/security/data-protection/implementation/key-immutability">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Immutability and Changing Settings</option><option value="/en-us/aspnet/core/security/data-protection/implementation/key-storage-format">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Storage Format</option><option value="/en-us/aspnet/core/security/data-protection/implementation/key-storage-ephemeral">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ephemeral data protection providers</option><option value="/en-us/aspnet/core/security/data-protection/compatibility/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Compatibility</option><option value="/en-us/aspnet/core/security/data-protection/compatibility/cookie-sharing">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sharing cookies between applications</option><option value="/en-us/aspnet/core/security/data-protection/compatibility/replacing-machinekey">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Replacing &lt;machineKey&gt; in ASP.NET</option><option value="/en-us/aspnet/core/security/enforcing-ssl">&nbsp;&nbsp;&nbsp;Enforcing SSL</option><option value="/en-us/aspnet/core/security/https">&nbsp;&nbsp;&nbsp;Setting up HTTPS for development</option><option value="/en-us/aspnet/core/security/app-secrets">&nbsp;&nbsp;&nbsp;Safe storage of app secrets during development</option><option value="/en-us/aspnet/core/security/key-vault-configuration">&nbsp;&nbsp;&nbsp;Azure Key Vault configuration provider</option><option value="/en-us/aspnet/core/security/anti-request-forgery">&nbsp;&nbsp;&nbsp;Anti-Request Forgery</option><option value="/en-us/aspnet/core/security/preventing-open-redirects">&nbsp;&nbsp;&nbsp;Preventing Open Redirect Attacks</option><option value="/en-us/aspnet/core/security/cross-site-scripting">&nbsp;&nbsp;&nbsp;Preventing Cross-Site Scripting</option><option value="/en-us/aspnet/core/security/cors">&nbsp;&nbsp;&nbsp;Enabling Cross-Origin Requests (xref:security/CORS)</option><option value="/en-us/aspnet/core/performance/">Performance</option><option value="/en-us/aspnet/core/performance/caching/">&nbsp;&nbsp;&nbsp;Caching</option><option value="/en-us/aspnet/core/performance/caching/memory">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In-Memory Caching</option><option value="/en-us/aspnet/core/performance/caching/distributed">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Working with a Distributed Cache</option><option value="/en-us/aspnet/core/performance/caching/response">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response Caching</option><option value="/en-us/aspnet/core/performance/caching/middleware">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Response Caching Middleware</option><option value="/en-us/aspnet/core/performance/response-compression">&nbsp;&nbsp;&nbsp;Response Compression Middleware</option><option value="/en-us/aspnet/core/migration/">Migration</option><option value="/en-us/aspnet/core/migration/mvc">&nbsp;&nbsp;&nbsp;ASP.NET to ASP.NET Core 1.x</option><option value="/en-us/aspnet/core/migration/configuration">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Configuration</option><option value="/en-us/aspnet/core/migration/identity">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authentication and Identity</option><option value="/en-us/aspnet/core/migration/webapi">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Web API</option><option value="/en-us/aspnet/core/migration/http-modules">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HTTP Modules to Middleware</option><option value="/en-us/aspnet/core/migration/1x-to-2x/">&nbsp;&nbsp;&nbsp;ASP.NET Core 1.x to 2.0</option><option value="/en-us/aspnet/core/migration/1x-to-2x/identity-2x">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Authentication and Identity</option><option value="/en-us/aspnet/core/api/">API Reference</option><option value="/en-us/aspnet/core/aspnetcore-2.0">2.0 release notes</option><option value="/en-us/aspnet/core/aspnetcore-1.1">&nbsp;&nbsp;&nbsp;1.1 Release notes</option><option value="https://github.com/aspnet/home/releases">&nbsp;&nbsp;&nbsp;Earlier release notes</option><option value="https://docs.microsoft.com/dotnet/articles/project-json">&nbsp;&nbsp;&nbsp;VS 2015/project.json docs</option><option value="https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md">Contribute</option></select>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="openFeedbackContainer" class="openfeedback-container footer-layout"></div>
+
+	<div class="container footerContainer">
+<footer id="footer" ms.pgarea="footer" data-bi-name="footer" class="footer-layout">
+  <div class="container" role="contentinfo">
+
+    <a id="locale-selector-link" href="https://docs.microsoft.com/en-us/locale?target=%2Fen-us%2Faspnet%2Fcore%2Ftutorials%2Ffirst-mvc-app%2Fnew-field" data-bi-name="select-locale" ms.cmpnm="select-locale">English (United States)</a>
+
+    <ul class="links" ms.cmpgrp="footerlinks" data-bi-name="footerlinks">
+      <li><a id="footer-about-link" href="https://docs.microsoft.com/teamblog" ms.cmpnm="bloglink" data-bi-name="bloglink">Blog</a></li>
+      <li><a id="footer-privacy-link" href="https://privacy.microsoft.com/en-us/" ms.cmpnm="privacy" data-bi-name="privacy">Privacy &amp; Cookies</a></li>
+      <li><a id="footer-term-of-use" href="https://docs.microsoft.com/en-us/legal/termsofuse" ms.cmpnm="termsofuse" data-bi-name="termsofuse">Terms of Use</a></li>
+      <li><a href="https://aka.ms/sitefeedback" ms.cmpnm="feedback" data-bi-name="feedback">Feedback</a></li>
+      <li id="impressum-section"><a id="impressum-link" href="https://docs.microsoft.com/en-us/aspnet/core/tutorials/first-mvc-app/new-field#" ms.cmpnm="impressum" data-bi-name="impressum">Impressum</a></li>
+      <li><a href="https://www.microsoft.com/en-us/legal/intellectualproperty/Trademarks/EN-US.aspx" ms.cmpnm="trademarks" data-bi-name="trademarks">Trademarks</a></li>
+    </ul>
+  </div>
+</footer>	</div>
+
+
+	<script src="./Adding a New Field _ Microsoft Docs_files/959b29235e59464fa914.conceptual.js.download"></script>
+
+<script src="./Adding a New Field _ Microsoft Docs_files/ms.js.download" async="" defer=""></script><script src="./Adding a New Field _ Microsoft Docs_files/Livefyre.js.download" async="" defer=""></script><script src="./Adding a New Field _ Microsoft Docs_files/open-commenting.entry.min.js.download" async="" defer=""></script><script src="./Adding a New Field _ Microsoft Docs_files/open-rating.entry.min.js.download" async="" defer=""></script><link rel="stylesheet" type="text/css" href="./Adding a New Field _ Microsoft Docs_files/open-commenting.ui.v1.0.2-7-g1b78816.master.min.css"><link rel="stylesheet" type="text/css" href="./Adding a New Field _ Microsoft Docs_files/open-commenting.ui.docs.v1.0.2-7-g1b78816.master.min.css"></body></html>
