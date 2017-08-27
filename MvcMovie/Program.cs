@@ -7,6 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+//add more library
+using Microsoft.Extensions.DependencyInjection; //Dependency Injection Library
+using MvcMovie.Models;  //MvcMovie models
 
 namespace MvcMovie
 {
@@ -14,7 +17,25 @@ namespace MvcMovie
     {
         public static void Main(string[] args)
         {
-            BuildWebHost(args).Run();
+            //add the seed initializer
+            var host = BuildWebHost(args);
+            
+            using(var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                try
+                {
+                    //requires using RazorPagesMovie.Models;
+                    SeedData.Initialize(services);
+                }catch(Exception e)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(e, "An error occured seeding the DB.");
+                }
+            }
+
+            host.Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>
