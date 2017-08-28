@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 //use library below to edit DateTime format
 using System.ComponentModel.DataAnnotations;
 
@@ -13,8 +10,10 @@ namespace MvcMovie.Models
         //ID is required for database as a primary key
         public int ID { get; set; }
         public string Title { get; set; }
-        [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
+        [Display(Name = "Release Date")]
+        [DataType(DataType.Date)]
         public DateTime ReleaseDate { get; set; }
+        [Display(Name = "Genre Film")]
         public string Genre { get; set; }
         public decimal Price { get; set; }
     }

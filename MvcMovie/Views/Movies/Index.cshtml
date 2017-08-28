@@ -9,6 +9,19 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+
+<!--Add a filter button-->
+<form asp-controller="Movies" asp-action="Index">
+    @*<p>
+        ID: <input type="text" name="id" />
+        <input type="submit" value="Filter by ID" />
+    </p>*@
+    <p>
+        Title: <input type="text" name="searchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
 <table class="table">
     <thead>
         <tr>
